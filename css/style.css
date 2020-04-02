@@ -6,11 +6,18 @@
 
 #wrapper { 
   width: 900px; 
-  margin : 0.5rem auto;
+  margin : 0.5vh 9vw;
   max-width: 68rem;
   min-width: 32rem;
+}
+
+#divide {
+  border-bottom: 1px solid #ccc;
 
 }
+
+
+
 .item-container {
   background: royalblue; 
   width: 100%; 
@@ -27,10 +34,14 @@
 
 }
 
+#home {
+  color: white;
+}
+
 a {
   text-decoration: none; 
-  color: royalblue;
-  transition: color 0.8s;
+  color: black;
+  transition: color 0.2s;
 }
 
 .nav-container {
@@ -40,16 +51,24 @@ a {
 }
 
 .nav-container a:hover {
-  color:rgb(22, 40, 94); 
+  color:royalblue; 
 }
 
 .nav-container-ul {
   display: block;
 }
+
 .nav-container li {
   color: royalblue;
   display: inline-flex;
   padding-right: 3vw;
+}
+
+#nav-container-strong {
+  color:royalblue; 
+  font-weight: bold;
+  border-bottom: 3px solid royalblue;
+  padding-bottom: 0.55rem;
 }
 
 @media screen and (min-width: 768px) {
