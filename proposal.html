@@ -25,15 +25,43 @@
   </div>
 
   <div id="wrapper">
-    <h3>Brief Overview of the Project: </h3>
-    <p> Here are some things you can do with the webpage...
-      <ul>
-        <li>Retrieve Data</li>
-        <li>Input different values for country</li>
-        <li>Input different values for age groups</li>
-      </ul>
-    </p>
+    <div class="overview">
+      <h3>Brief Overview of the Project: </h3>
+      <p> Here are some things you can do with the webpage...
+        <ul>
+          <li>Retrieve Data</li>
+          <li>Input different values for country</li>
+          <li>Input different values for age groups</li>
+        </ul>
+      </p>
+    </div>
+    <div>
+      <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="/js/covidApi.js"></script>
+      <script language="javascript">
+        _getData();
 
+      </script>
+    </div>
+    <div class="result">
+      <div class="result-heading">
+        <h3>
+          Table of COVID information for 50 states
+        </h3>
+      </div>
+      <table id="states" class="table">
+        <tr>
+          <th>STATE</th>
+          <th>Total Test Results</th>
+          <th>POSITIVE</th>
+          <th>NEGATIVE</th>
+          <th>DEATHS</th>
+          <th>RECOVERED</th>
+        </tr>
+
+      </table>
+    </div>
 
   </div>
 

@@ -6,9 +6,10 @@
 
 #wrapper { 
   width: 900px; 
-  margin : 0.5vh 9vw;
+  margin : 0.5vh auto;
   max-width: 68rem;
   min-width: 32rem;
+  position: relative;
 }
 
 #divide {
@@ -70,6 +71,23 @@ a {
   border-bottom: 3px solid royalblue;
   padding-bottom: 0.55rem;
 }
+
+.result {
+  display: block; 
+  align-content: center;
+}
+
+.result-heading {
+  display: block; 
+  text-align: center;
+  padding: 10vh auto;
+  
+
+}
+#states {
+  display: block;
+}
+
 
 @media screen and (min-width: 768px) {
   .item-container{
