@@ -91,8 +91,54 @@ a {
   }
 }
 
+h3 {
+  padding-top: 3vh; 
+  padding-bottom: 1vh;
+  color: royalblue;
+}
+
+h4 {
+  padding-top: 2vh; 
+  padding-bottom: 1vh;
+}
+
+h4 li {
+  list-style-type: none;
+  padding-bottom: 2vh; 
+}
+
+
+
+h4 a:before {
+  content: "";
+  color: royalblue;
+  position: absolute; 
+  width : 0; 
+  height: 2px; 
+  bottom: -5px;
+  left: 0; 
+  background-color: royalblue;
+  border-bottom: 2px solid royalblue; 
+  visibility: hidden; 
+  transition: all 0.4s ease-in-out; 
+}
+
+h4 a {
+  position: relative;
+}
+
+h4 a:hover:before {
+  visibility: visible;
+  width: 100%; 
+}
+
+h4 a:hover {
+  color: royalblue;
+}
+
 footer {
   background: #ccc;
   margin-top: 50vh;
 }
+
 
