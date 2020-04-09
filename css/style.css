@@ -1,35 +1,56 @@
-* { 
-  margin: 0; 
+* {
+  margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
-#wrapper { 
-  width: 1000px; 
-  margin : 0.5vh auto;
+#wrapper {
+  width: 1000px;
+  margin: 0.5vh auto;
   max-width: 90rem;
 }
 
 #divide {
-  margin-top: 0.5vh; 
+  margin-top: 0.5vh;
   border-bottom: 1px solid #ccc;
 }
 
 .nav-container {
-  width: 900px; 
-  margin: 3px 8vw; 
+  width: 900px;
+  margin: 3px 8vw;
   max-width: 68 rem;
   display: flex;
   justify-content: space-between;
-  padding: 1.01vh 0vh; 
+  padding: 1.01vh 0vh;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.2s;
+}
+
+
+h4 a {
+  position: relative;
+}
+
+h4 a:hover {
+  color: royalblue;
+}
+
+
 .nav-container a:hover {
-  color:royalblue; 
+  color: royalblue;
 }
 
 .nav-container-ul {
   display: block;
+}
+
+h4 li {
+  list-style-type: none;
+  padding-bottom: 2vh;
 }
 
 .nav-container li {
@@ -39,23 +60,23 @@
 }
 
 #nav-container-strong {
-  color:royalblue; 
+  color: royalblue;
   font-weight: bold;
   border-bottom: 3px solid royalblue;
   padding-bottom: 0.55rem;
 }
 
 .item-container {
-  background: royalblue; 
-  width: 100%; 
+  background: royalblue;
+  width: 100%;
   height: 9vh;
   display: flex;
 }
 
-.item1{
+.item1 {
   color: white;
   display: block;
-  margin : auto 2rem;
+  margin: auto 2rem;
   text-align: left;
   align-content: center;
 
@@ -65,58 +86,43 @@
   color: white;
 }
 
-a {
-  text-decoration: none; 
-  color: black;
-  transition: color 0.2s;
-}
 
 h3 {
-  padding-top: 3vh; 
+  padding-top: 3vh;
   padding-bottom: 1vh;
   color: royalblue;
   font-size: 160%;
 }
 
 h4 {
-  padding-top: 2vh; 
+  padding-top: 2vh;
   padding-bottom: 1vh;
 }
 
-h4 li {
-  list-style-type: none;
-  padding-bottom: 2vh; 
-}
+
 
 h4 a:before {
   content: "";
   color: royalblue;
-  position: absolute; 
-  width : 0; 
-  height: 2px; 
+  position: absolute;
+  width: 0;
+  height: 2px;
   bottom: -5px;
-  left: 0; 
+  left: 0;
   background-color: royalblue;
-  border-bottom: 2px solid royalblue; 
-  visibility: hidden; 
-  transition: all 0.4s ease-in-out; 
+  border-bottom: 2px solid royalblue;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
 }
 
-h4 a {
-  position: relative;
-}
 
 h4 a:hover:before {
   visibility: visible;
-  width: 100%; 
-}
-
-h4 a:hover {
-  color: royalblue;
+  width: 100%;
 }
 
 .guide {
-  padding-top: 3vh; 
+  padding-top: 3vh;
   padding-bottom: 3vh;
   color: royalblue;
   font-weight: 700;
@@ -131,9 +137,9 @@ h4 a:hover {
 }
 
 .subtitle {
-  color:grey; 
-  font-size: 130%; 
-  padding-bottom: 10vh; 
+  color: grey;
+  font-size: 130%;
+  padding-bottom: 10vh;
 }
 
 .content p {
@@ -146,7 +152,7 @@ h4 a:hover {
   display: flex;
   padding-top: 5vh;
   padding-bottom: 5vh;
-} 
+}
 
 .whyCovid-left {
   display: inline-block;
@@ -166,7 +172,7 @@ h4 a:hover {
   width: 78%;
 }
 
-#however{
+#however {
   text-align: center;
   padding: 3vh 0 3vh 0;
   font-weight: 600;
@@ -178,6 +184,12 @@ h4 a:hover {
   padding: 3vh 0 3vh 0;
 }
 
+.main-page-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%
+}
+
 .footer-container {
   position: relative;
   background: rgb(243, 243, 243);
@@ -186,15 +198,15 @@ h4 a:hover {
   text-align: center;
 }
 
-.footer-container p{
+.footer-container p {
   color: grey;
   line-height: 30px;
 }
 
 .image {
   padding: 3vh 0 3vh 0;
-  display: block; 
-  margin: 0 auto; 
-  width: 70%; 
-  height: auto; 
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  height: auto;
 }
