@@ -13,21 +13,27 @@
   <header class="item-container">
     <h2 class="item1"><a id="home" href="proposal.html">Jin's Project Proposal For INFO 340</a></h2>
   </header>
+
   <div id="divide">
-    <div id="wrapper">
-      <nav class="nav-container">
-        <ul class="nav-container-ul">
-          <li><a href="problemDomain.html"><strong id="nav-container-strong">Problem Domain</strong></a></li>
-          <li><a href="application.html">Application</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav class="nav-container">
+      <ul class="nav-container-ul">
+        <li><a href="problemDomain.html"><strong id="nav-container-strong">Problem Domain</strong></a></li>
+        <li><a href="application.html">Application</a></li>
+      </ul>
+    </nav>
   </div>
 
   <div id="wrapper">
-    <h3>
-      Jump to section
+    <h3 class="title">
+      Problem Domain
     </h3>
+    <p class="subtitle">
+      This section will dive deeper into the problem selection
+    </p>
+
+    <span class="guide">
+      Jump to section :
+    </span>
     <ul>
       <h4>
         <li><a href="#Overview">Overview of the Topic</a></li>
@@ -35,60 +41,66 @@
       </h4>
     </ul>
 
-    <div className="Contents">
-      <div className="Overview">
+    <div class="content">
+      <section class="Overview">
         <a name="Overview">
           <h3>Overview of the Topic</h3>
         </a>
 
-        <h4>
-          Why COVID?
-        </h4>
-        <p>
-          COVID outbreak is a pandemic, which is causing severe economical, personal issues all around the world. <br>
-          Currently there are more than a million of global population diagnosed with the virus. <br>
-          There are a lot of web pages providing information regarding COVID. Most of them are in website form, giving
-          users a general overview of the COVID statistics around the world. I want to use the same technology — using
-          web apps — to
-          provide state-specific information, so that people in each state can view more specific or detailed statistics
-          regarding their own state. I found that most of the web pages provide more global information; information
-          more specific to countries.
+        <div class="whyCovid-container">
+          <subsection class="whyCovid-left">
+            <h4>
+              Why <br>
+              COVID?
+            </h4>
+          </subsection>
 
-          <p>
-            <br>
-            Couple of them would include :
-            <br>
-            <span class="exampleLink">
-              <a
-                href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">
-                CoronaVirus COVID-19 Global Cases ARCGIS
-              </a> 
+          <subsection class="whyCovid-right">
+            <p>
+              COVID outbreak is a pandemic, which is causing economical, personal issues around the world.
+              <br>
+              Currently, there are more than a million of global population diagnosed with the virus. <br>
+              There are a lot of web pages providing information regarding COVID. <br>
+              Most of them are in website form, giving users a general overview of the COVID statistics around the
+              world. <br><br>
+              I wanted to use the same technology to provide state-specific information, so that people in each state
+              can view more specific or detailed statistics regarding their own state. I found that most of the web
+              pages provide more global information; information more specific to countries.
 
               <br>
+              Couple of them would include :
+              <br>
+              <span class="exampleLink">
+                <a
+                  href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">
+                  CoronaVirus COVID-19 Global Cases ARCGIS
+                </a> 
+                <br>
+                <a href="https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/cases-in-us.html">
+                  CDC COVID
+                </a>
+              </span> 
+              <p>
+          </subsection>
+        </div>
 
-              <a href="https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/cases-in-us.html">
-                CDC COVID
-              </a>
-            </span> 
-            <br>
-            <br>
-          </p>
-
-          <p>
-            However, I wanted the users to give freedom of accesing more state-speific information <br>
-                      So this app has following functions: <br>
-                      1) A table containing state-wide information for the date of the access <br>
-                      2) Click on each rows to get more information about a specific state <br>
-                      3) Detailed information would give the users <br>
-                      a) 10 day overview of the data of the state in the form of graph <br>
-                      b) Some useful local news feed <br>
-                      c) Guidelines for safe practice <br>
-          </p>
-
-
+        <p id="however">
+          However, I wanted the users to give freedom of accesing more state-speific information
         </p>
-      </div>
-      <div className="user-case">
+
+        <!-- change this to UL -->
+        <p class=content2>
+                    So this app has following functions: <br>
+                    1) A table containing state-wide information for the date of the access <br>
+                    2) Click on each rows to get more information about a specific state <br>
+                    3) Detailed information would give the users <br>
+                    4) 10 day overview of the data of the state in the form of graph <br>
+                    5) Some useful local news feed <br>
+                    6) Guidelines for safe practice <br>
+        </p>
+
+      </section>
+      <section class="user-case">
         <a name="User Case">
           <h3>User Case</h3>
         </a>
@@ -99,14 +111,16 @@
           view the trends of these number for a ten day span presented in a visualization. He wants to also know the
           local news feed as well. He can use the functions of the web app to retrieve the information he wants.
         </p>
-      </div>
+      </section>
     </div>
   </div>
 
+  <!-- footer -->
   <footer>
     <div class="footer-container">
       <p>
-        footer area
+        Created by Jin Son <br>
+        2020
       </p>
     </div>
   </footer>
