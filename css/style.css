@@ -30,6 +30,9 @@ a {
   transition: color 0.2s;
 }
 
+.extLink {
+  text-decoration: underline black;
+}
 
 h4 a {
   position: relative;
