@@ -1,13 +1,10 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box;
 }
-
-h1 {
-  font-size: 140%;
-}
-
+/*
 #wrapper {
   width: 1000px;
   margin: 0.5vh auto;
@@ -17,15 +14,6 @@ h1 {
 #divide {
   margin-top: 0.5vh;
   border-bottom: 1px solid #ccc;
-}
-
-.nav-container {
-  width: 900px;
-  margin: 3px 8vw;
-  max-width: 68 rem;
-  display: flex;
-  justify-content: space-between;
-  padding: 1.01vh 0vh;
 }
 
 a {
@@ -46,32 +34,26 @@ h4 a:hover {
   color: royalblue;
 }
 
-
-.nav-container a:hover {
-  color: royalblue;
-}
-
-.nav-container-ul {
-  display: block;
-}
-
 h4 li {
   list-style-type: none;
   padding-bottom: 2vh;
 }
 
-.nav-container li {
-  color: royalblue;
-  display: inline-flex;
-  padding-right: 3vw;
+*/
+
+.navbar-dark {
+  overflow: hidden;
 }
 
-#nav-container-strong {
-  color: royalblue;
-  font-weight: bold;
-  border-bottom: 3px solid royalblue;
-  padding-bottom: 0.55rem;
+.navbar-dark a {
+  padding: 5px;
+  color: #fff; /*Sets the text hover color on navbar*/
 }
+
+.navbar-dark .nav-link:hover {
+  background-color: #2255a3;
+}
+
 
 .item-container {
   background: royalblue;
@@ -106,8 +88,6 @@ h4 {
   padding-bottom: 1vh;
 }
 
-
-
 h4 a:before {
   content: "";
   color: royalblue;
@@ -128,19 +108,12 @@ h4 a:hover:before {
   width: 100%;
 }
 
-.guide {
-  padding-top: 3vh;
-  padding-bottom: 3vh;
-  color: royalblue;
-  font-weight: 700;
+header {
+  margin-top: 100px;
 }
 
 .title {
   color: black;
-  font-weight: bold;
-  font-size: -webkit-xxx-large;
-  padding-bottom: 3vh;
-  padding-top: 5vh;
 }
 
 .subtitle {
@@ -213,16 +186,4 @@ h4 a:hover:before {
 .footer-container p {
   color: grey;
   line-height: 30px;
-}
-
-.image {
-  padding: 3vh 0 3vh 0;
-  display: block;
-  margin: 0 auto;
-  width: 70%;
-  height: auto;
-}
-
-.navtitle {
-  
 }
