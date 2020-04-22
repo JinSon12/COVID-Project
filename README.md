@@ -11,7 +11,7 @@
  * Mobile First approach 
  
 ### Workflow: 
-1. Before working on a new feature, always do a `git pull`. 
+1. Before working on a new feature, always do a `git pull` on `master`. 
 2. **THEN** create a new branch.
 3. When done with the feature, merge master into your branch just in case.
 4. Push the branch to Github and create a Pull Request.
