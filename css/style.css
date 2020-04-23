@@ -60,14 +60,27 @@ h3 {
 }
 
 /* TABLE */
-.grade {    
-  display: none; /* Only display on larger screens */
+.table-container {
+  overflow-x: auto;
 }
 
 table {
-  font-size: 25px;
+  font-size: 22px;
 }
 
+th {
+  background-color: royalblue;
+  color: white;
+}
+
+th, td {
+  padding: 2px;
+  border-bottom: solid 1px #333333;
+}
+
+table tr:nth-of-type(even) {
+  background-color: #F3F3F3;
+}
 
 
 /* LINE CHART */
