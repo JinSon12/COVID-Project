@@ -8,10 +8,16 @@
   <title>Covid-19 Tracker</title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Line chart -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+  <script type="text/javascript" src="scripts/LineChart.js"></script>
+  <script type="text/javascript" src="scripts/LineChartDeaths.js"></script>
+
+  <!-- Bootstrap/CSS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/style.css">
@@ -75,6 +81,11 @@
             </tr>
           </thead>
         </table>
+        <div class="charts">
+          <div class="line-chart" id="line-chart-cases"></div>
+          <div class="line-chart" id="line-chart-deaths"></div>
+        </div>
+
       </div>
     </main>
   
