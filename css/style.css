@@ -76,6 +76,7 @@ table {
 
 
 
+
 /*
 h4 {
   padding-top: 2vh;
@@ -102,42 +103,16 @@ h4 a:hover:before {
   width: 100%;
 }
 
+/* About */
+.about-dev h3{
+  font-size: 2rem;
 
+}
 
 .content p {
   padding: 1vh 0 1vh 0;
   font-size: 110%;
   line-height: 1.4;
-}
-
-.whyCovid-container {
-  display: flex;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-}
-
-.whyCovid-left {
-  display: inline-block;
-  vertical-align: top;
-  justify-content: center;
-  width: 20%;
-}
-
-.whyCovid-left h4 {
-  padding-top: 10px;
-  padding-left: 30px;
-  font-size: 115%;
-}
-
-.whyCovid-right {
-  display: inline-block;
-  width: 78%;
-}
-
-#however {
-  text-align: center;
-  padding: 3vh 0 3vh 0;
-  font-weight: 600;
 }
 
 .content2 {
@@ -150,7 +125,7 @@ h4 a:hover:before {
   padding: 0vh 0vw 0vh 18vw;
   font-size: 105%;
 }
-*/
+
 
 .footer-container {
   position: relative;
