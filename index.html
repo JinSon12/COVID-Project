@@ -8,10 +8,16 @@
   <title>Covid-19 Tracker</title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Line chart -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+  <script type="text/javascript" src="scripts/LineChart.js"></script>
+  <script type="text/javascript" src="scripts/LineChartDeaths.js"></script>
+
+  <!-- Bootstrap/CSS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/style.css">
@@ -62,19 +68,73 @@
           <h2>Recoveries</h2>
           <h3>83,917</h3>
         </div>
-
+        <div class="table-container">
         <table>
           <thead>
             <tr>
-              <th>State</th>
+              <th>&nbsp;</th>
               <th>Cases</th>
               <th>Positive</th>
               <th>Negative</th>
+              <th>Pos/Neg</th>
+              <th>Recoveries</th>
               <th>Deaths</th>
-              <th class="grade">Grade</th>
             </tr>
           </thead>
+          <tbody>
+            <tr>
+              <td>Alabama</td>
+              <td>48760</td>
+              <td>5465</td>
+              <td>43295</td>
+              <td>0.03</td>
+              <td>196</td>
+              <td>194</td>
+            </tr>
+            <tr>
+              <td>Arkansas</td>
+              <td>29713</td>
+              <td>2276</td>
+              <td>27437</td>
+              <td>0.13</td>
+              <td>N/A</td>
+              <td>42</td>
+            </tr>
+            <tr>
+              <td>Arizona</td>
+              <td>56601</td>
+              <td>5459</td>
+              <td>51142</td>
+              <td>0.08</td>
+              <td>863</td>
+              <td>229</td>
+            </tr>
+            <tr>
+              <td>California</td>
+              <td>465327</td>
+              <td>35396</td>
+              <td>429931</td>
+              <td>0.08</td>
+              <td>N/A</td>
+              <td>1354</td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+          </tbody>
         </table>
+      </div>
+        <div class="charts">
+          <div class="line-chart" id="line-chart-cases"></div>
+          <div class="line-chart" id="line-chart-deaths"></div>
+        </div>
+
       </div>
     </main>
   </div>

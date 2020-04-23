@@ -34,13 +34,9 @@ header {
   margin-top: 150px;
 }
 
-.title {
-  text-align: center;
-}
 
 .subtitle {
   color: grey;
-  text-align: center;
   padding-bottom: 10vh;
   font-size: 25px;
 }
@@ -64,17 +60,39 @@ h3 {
 }
 
 /* TABLE */
-.grade {    
-  display: none; /* Only display on larger screens */
+.table-container {
+  overflow-x: auto;
 }
 
 table {
-  font-size: 25px;
+  font-size: 22px;
+}
+
+th {
+  background-color: royalblue;
+  color: white;
+}
+
+th, td {
+  padding: 2px;
+  border-bottom: solid 1px #333333;
+}
+
+table tr:nth-of-type(even) {
+  background-color: #F3F3F3;
 }
 
 
+/* LINE CHART */
+.line-chart {
+  width: 375px;
+  height: auto;
+}
 
-
+.charts {
+  position: relative;
+  left: -25px;
+}
 
 
 /*
