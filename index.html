@@ -21,9 +21,9 @@
 <body>
   <!-- NAVBAR -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-*" style="background-color: royalblue;">
-    <a href="#">
-      <p><strong>COVID-19 Tracker</strong></p> <!-- Add a logo here instead -->
-    </a>
+    <div class="logo">
+      <a href="index.html"><img src="./img/logo2.png" class="nav-logo" alt="Covid-19 Tracker Logo"></a>
+    </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Tracker</a>
+          <a class="nav-link" href="index.html">COVID-19 Tracker</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="About.html">About</a>
@@ -50,32 +50,43 @@
   <div class="container">
     <header>
       <h1 class="title">COVID-19 Tracker</h1>
-      <h3 class="subtitle">The most up-to-date information on the Corona Virus in the United States.</h3>
+      <h2 class="subtitle">Everything you need to know about the Corona Virus in the United States.</h2>
     </header>
     <main>
       <div class="container">
         <div class="america-stats">
-          <h3>Number of Cases</h3>
-          <h3>XXX,XXX</h3>
-          <h3>Number of Deaths</h3>
-          <h3>X,XXX</h3>
-          <h3>Number of Recoveries</h3>
-          <3>XXX,XXX</3>
+          <h2>Cases</h2>
+          <h3>845,822</h3>
+          <h2>Deaths</h2>
+          <h3>47,479</h3>
+          <h2>Recoveries</h2>
+          <h3>83,917</h3>
         </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>Cases</th>
+              <th>Positive</th>
+              <th>Negative</th>
+              <th>Deaths</th>
+              <th class="grade">Grade</th>
+            </tr>
+          </thead>
+        </table>
       </div>
     </main>
   </div>
 
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-container">
-      <p>
-        Created by <br>
-        Jin Son & Kyle Kusche<br>
-        2020 &copy;
-      </p>
+      <p>Created by Jin Son & Kyle Kusche 2020 &copy;</p>
     </div>
   </footer>
+  </div>
 </body>
 
 </html>
