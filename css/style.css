@@ -3,46 +3,8 @@
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   box-sizing: border-box;
+  color: #333333;
 }
-
-/*
-#wrapper {
-  width: 1000px;
-  margin: 0.5vh auto;
-  max-width: 90rem;
-}
-
-#divide {
-  margin-top: 0.5vh;
-  border-bottom: 1px solid #ccc;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-  transition: color 0.2s;
-}
-
-.extLink {
-  text-decoration: underline black;
-}
-
-h4 a {
-  position: relative;
-}
-
-h4 a:hover {
-  color: royalblue;
-}
-
-h4 li {
-  list-style-type: none;
-  padding-bottom: 2vh;
-}
-
-*/
-
-
 
 /* NAVBAR */
 .navbar-dark {
@@ -58,37 +20,68 @@ h4 li {
   background-color: royalblue;
 }
 
+.nav-logo {
+  width: 50px;
+  height: auto;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
 
-.item-container {
-  background: royalblue;
-  width: 100%;
-  height: 9vh;
+/* HEADER */
+header {
+  margin-top: 150px;
+}
+
+
+.subtitle {
+  color: grey;
+  padding-bottom: 10vh;
+  font-size: 25px;
+}
+
+/* STATS */
+.america-stats {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.item1 {
-  color: white;
-  display: block;
-  margin: auto 2rem;
-  text-align: left;
-  align-content: center;
-
+h2 {
+  font-size: 9vw;
+  margin: 0;
 }
-
-#home {
-  color: white;
-}
-
-
-
 
 h3 {
-  padding-top: 3vh;
-  padding-bottom: 1vh;
+  padding-bottom: 5vh;
   color: royalblue;
-  font-size: 160%;
+  font-size: 20vw;
 }
 
+/* TABLE */
+.grade {    
+  display: none; /* Only display on larger screens */
+}
+
+table {
+  font-size: 25px;
+}
+
+
+
+/* LINE CHART */
+.line-chart {
+  width: 375px;
+  height: auto;
+}
+
+.charts {
+  position: relative;
+  left: -25px;
+}
+
+/*
 h4 {
   padding-top: 2vh;
   padding-bottom: 1vh;
@@ -114,19 +107,7 @@ h4 a:hover:before {
   width: 100%;
 }
 
-header {
-  margin-top: 100px;
-}
 
-.title {
-  color: black;
-}
-
-.subtitle {
-  color: grey;
-  font-size: 130%;
-  padding-bottom: 10vh;
-}
 
 .content p {
   padding: 1vh 0 1vh 0;
@@ -174,12 +155,7 @@ header {
   padding: 0vh 0vw 0vh 18vw;
   font-size: 105%;
 }
-
-.main-page-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%
-}
+*/
 
 .footer-container {
   position: relative;
@@ -193,3 +169,7 @@ header {
   color: grey;
   line-height: 30px;
 }
+
+/* Color palette:
+#4169e1 -- royal blue
+*/

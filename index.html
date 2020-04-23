@@ -8,10 +8,16 @@
   <title>Covid-19 Tracker</title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Line chart -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+  <script type="text/javascript" src="scripts/LineChart.js"></script>
+  <script type="text/javascript" src="scripts/LineChartDeaths.js"></script>
+
+  <!-- Bootstrap/CSS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/style.css">
@@ -21,9 +27,9 @@
 <body>
   <!-- NAVBAR -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-*" style="background-color: royalblue;">
-    <a href="#">
-      <p><strong>COVID-19 Tracker</strong></p> <!-- Add a logo here instead -->
-    </a>
+    <div class="logo">
+      <a href="index.html"><img src="./img/logo2.png" class="nav-logo" alt="Covid-19 Tracker Logo"></a>
+    </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -32,7 +38,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Tracker</a>
+          <a class="nav-link" href="index.html">COVID-19 Tracker</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="About.html">About</a>
@@ -50,32 +56,48 @@
   <div class="container">
     <header>
       <h1 class="title">COVID-19 Tracker</h1>
-      <h3 class="subtitle">The most up-to-date information on the Corona Virus in the United States.</h3>
+      <h2 class="subtitle">Everything you need to know about the Corona Virus in the United States.</h2>
     </header>
     <main>
       <div class="container">
         <div class="america-stats">
-          <h3>Number of Cases</h3>
-          <h3>XXX,XXX</h3>
-          <h3>Number of Deaths</h3>
-          <h3>X,XXX</h3>
-          <h3>Number of Recoveries</h3>
-          <3>XXX,XXX</3>
+          <h2>Cases</h2>
+          <h3>845,822</h3>
+          <h2>Deaths</h2>
+          <h3>47,479</h3>
+          <h2>Recoveries</h2>
+          <h3>83,917</h3>
         </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>Cases</th>
+              <th>Positive</th>
+              <th>Negative</th>
+              <th>Deaths</th>
+              <th class="grade">Grade</th>
+            </tr>
+          </thead>
+        </table>
+        <div class="charts">
+          <div class="line-chart" id="line-chart-cases"></div>
+          <div class="line-chart" id="line-chart-deaths"></div>
+        </div>
+
       </div>
     </main>
   </div>
 
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-container">
-      <p>
-        Created by <br>
-        Jin Son & Kyle Kusche<br>
-        2020 &copy;
-      </p>
+      <p>Created by Jin Son & Kyle Kusche 2020 &copy;</p>
     </div>
   </footer>
+  </div>
 </body>
 
 </html>
