@@ -53,7 +53,9 @@ function drawBackgroundColor() {
           }
         },
         colors: ['#d6392d'], 
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        'width':400,
+        'height':300
       };
 
 

@@ -34,7 +34,6 @@ header {
   margin-top: 150px;
 }
 
-
 .subtitle {
   color: grey;
   padding-bottom: 10vh;
@@ -62,6 +61,8 @@ h3 {
 /* TABLE */
 .table-container {
   overflow-x: auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 table {
@@ -87,10 +88,12 @@ table tr:nth-of-type(even) {
 .line-chart {
   width: 375px;
   height: auto;
+  display: inline-block;
 }
 
 .charts {
   position: relative;
+  overflow: hidden;
   left: -25px;
 }
 
@@ -119,55 +122,6 @@ h4 a:hover:before {
   visibility: visible;
   width: 100%;
 }
-
-
-
-.content p {
-  padding: 1vh 0 1vh 0;
-  font-size: 110%;
-  line-height: 1.4;
-}
-
-.whyCovid-container {
-  display: flex;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-}
-
-.whyCovid-left {
-  display: inline-block;
-  vertical-align: top;
-  justify-content: center;
-  width: 20%;
-}
-
-.whyCovid-left h4 {
-  padding-top: 10px;
-  padding-left: 30px;
-  font-size: 115%;
-}
-
-.whyCovid-right {
-  display: inline-block;
-  width: 78%;
-}
-
-#however {
-  text-align: center;
-  padding: 3vh 0 3vh 0;
-  font-weight: 600;
-}
-
-.content2 {
-  display: block;
-  margin: 0 0 0 11vw;
-  padding: 3vh 0 3vh 0;
-}
-
-.content2-list {
-  padding: 0vh 0vw 0vh 18vw;
-  font-size: 105%;
-}
 */
 
 .footer-container {
@@ -182,6 +136,82 @@ h4 a:hover:before {
   color: grey;
   line-height: 30px;
 }
+
+@media (min-width: 598px) {
+  .title {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 60px;
+  }
+  
+  h3 {
+    font-size: 100px;
+  }
+  .line-chart { /* CHANGE THEIR SIZE ON BIGGER VIEWPORTS */
+    display: inline;
+  }
+
+}
+
+
+@media (min-width: 768px) {
+  .america-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .stat-info-container {
+    margin: 30px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 60px;
+  }
+
+  .charts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  header {
+    margin-top: 100px;
+    text-align: center;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  table {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .title {
+    font-size: 75px;
+  }
+  .subtitle {
+    font-size: 30px;
+  }
+}
+
+
+
 
 /* Color palette:
 #4169e1 -- royal blue
