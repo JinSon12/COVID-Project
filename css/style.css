@@ -9,6 +9,9 @@
 /* NAVBAR */
 .navbar-dark {
   overflow: hidden;
+  -webkit-box-shadow: 0px 6px 10px -4px rgba(0,0,0,0.37);
+  -moz-box-shadow: 0px 6px 10px -4px rgba(0,0,0,0.37);
+  box-shadow: 0px 6px 10px -4px rgba(0,0,0,0.37);
 }
 
 .navbar-dark a {
@@ -47,12 +50,6 @@ body {
 }
 
 /* STATS */
-.america-stats {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 h2 {
   font-size: 9vw;
   margin: 0;
@@ -61,7 +58,7 @@ h2 {
 h3 {
   padding-bottom: 5vh;
   color: royalblue;
-  font-size: 20vw;
+  font-size: 16vw;
 }
 
 /* TABLE */
@@ -69,6 +66,9 @@ h3 {
   overflow-x: auto;
   margin-top: 30px;
   margin-bottom: 50px;
+  -webkit-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
+-moz-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
+box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
 }
 
 table {
@@ -89,6 +89,15 @@ table tr:nth-of-type(even) {
   background-color: #F3F3F3;
 }
 
+tr:hover {
+  cursor: pointer;
+  background-color: #d1e3ff !important;
+}
+
+.state {
+  color: royalblue;
+  text-decoration: underline;
+}
 
 /* LINE CHART */
 .line-chart {
@@ -103,6 +112,11 @@ table tr:nth-of-type(even) {
   left: -25px;
 }
 
+h4 {
+  text-decoration: underline royalblue;
+  margin-bottom: 25px;
+  font-size: 40px;
+}
 
 /*
 h4 {
@@ -132,7 +146,6 @@ h4 a:hover:before {
 */
 
 /* About */
-
 .container-body-parag{
   padding: 2em 0px;
 }
@@ -153,6 +166,10 @@ h4 a:hover:before {
   margin-left: 2rem; 
 }
 
+/* NEWS */
+.news {
+   margin-top: 100px;
+}
 
 @media (min-width: 598px) {
   .title {
@@ -173,16 +190,6 @@ h4 a:hover:before {
 
 
 @media (min-width: 768px) {
-  .america-stats {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .stat-info-container {
-    margin: 30px;
-  }
-
   h2 {
     font-size: 40px;
   }
@@ -198,11 +205,13 @@ h4 a:hover:before {
   }
 }
 
-
-
 @media (min-width: 992px) {
   header {
-    margin-top: 100px;
+    margin-top: 150px;
+    text-align: center;
+  }
+
+  .stat {
     text-align: center;
   }
 
@@ -230,12 +239,11 @@ h4 a:hover:before {
 }
 
 /* FOOTER */
-
 .footer-container {
   position: relative;
   background: rgb(243, 243, 243);
   margin: 80px 0 0 0;
-  padding: 50px 0 50px 0;
+  padding: 20px 0 10px 0;
   text-align: center;
 }
 
