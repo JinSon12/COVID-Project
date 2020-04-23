@@ -40,6 +40,12 @@ header {
   font-size: 25px;
 }
 
+/* BODY */
+body {
+  font-size: 110%;
+  line-height: 1.6;
+}
+
 /* STATS */
 .america-stats {
   display: flex;
@@ -127,23 +133,25 @@ h4 a:hover:before {
 
 /* About */
 
-.about-dev{
+.container-body-parag{
   padding: 2em 0px;
 }
 
-.about-dev h3{
+.container-body-parag h3{
   padding: 0;
   font-size: 2rem;
 }
 
-
-
-.content p {
+/* More INFO */
+.moreInfo {
   padding: 1vh 0 1vh 0;
   font-size: 110%;
   line-height: 1.4;
 }
 
+.moreInfo li{
+  margin-left: 2rem; 
+}
 
 
 @media (min-width: 598px) {
