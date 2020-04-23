@@ -34,13 +34,9 @@ header {
   margin-top: 150px;
 }
 
-.title {
-  text-align: center;
-}
 
 .subtitle {
   color: grey;
-  text-align: center;
   padding-bottom: 10vh;
   font-size: 25px;
 }
@@ -74,7 +70,16 @@ table {
 
 
 
+/* LINE CHART */
+.line-chart {
+  width: 375px;
+  height: auto;
+}
 
+.charts {
+  position: relative;
+  left: -25px;
+}
 
 /*
 h4 {
