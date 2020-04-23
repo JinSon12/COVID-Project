@@ -97,6 +97,7 @@ table tr:nth-of-type(even) {
   left: -25px;
 }
 
+
 /*
 h4 {
   padding-top: 2vh;
@@ -124,18 +125,26 @@ h4 a:hover:before {
 }
 */
 
-.footer-container {
-  position: relative;
-  background: rgb(243, 243, 243);
-  margin: 80px 0 0 0;
-  padding: 50px 0 50px 0;
-  text-align: center;
+/* About */
+
+.about-dev{
+  padding: 2em 0px;
 }
 
-.footer-container p {
-  color: grey;
-  line-height: 30px;
+.about-dev h3{
+  padding: 0;
+  font-size: 2rem;
 }
+
+
+
+.content p {
+  padding: 1vh 0 1vh 0;
+  font-size: 110%;
+  line-height: 1.4;
+}
+
+
 
 @media (min-width: 598px) {
   .title {
@@ -181,6 +190,8 @@ h4 a:hover:before {
   }
 }
 
+
+
 @media (min-width: 992px) {
   header {
     margin-top: 100px;
@@ -210,6 +221,20 @@ h4 a:hover:before {
   }
 }
 
+/* FOOTER */
+
+.footer-container {
+  position: relative;
+  background: rgb(243, 243, 243);
+  margin: 80px 0 0 0;
+  padding: 50px 0 50px 0;
+  text-align: center;
+}
+
+.footer-container p {
+  color: grey;
+  line-height: 30px;
+}
 
 
 
