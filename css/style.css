@@ -78,6 +78,10 @@ h3 {
 box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
 }
 
+button {
+  align-self: flex-end;
+}
+
 table {
   font-size: 22px;
 }
@@ -269,15 +273,18 @@ iframe{
 
 /* FOOTER */
 .footer-container {
-  position: relative;
-  background: rgb(243, 243, 243);
-  margin: 80px 0 0 0;
-  padding: 20px 0 10px 0;
-  text-align: center;
+  display: flex;
+  background-color: rgb(243, 243, 243);
+  margin: 180px 0 0 0;
+  height: 25vh;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .footer-container p {
+  text-align: center;
+  position: absolute;
   color: grey;
-  line-height: 30px;
 }
 
