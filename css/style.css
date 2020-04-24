@@ -35,19 +35,20 @@
 
 /* HEADER */
 header {
-  margin-top: 10rem;
+  margin: 10rem 0 5rem 0;
   text-align: center;
 }
 
-header p {
+header p, header span{
+  margin-top: 2rem;
   text-align: center; 
   color: grey;
 }
 
 .subtitle {
   color: grey;
-  padding-bottom: 10vh;
   font-size: 25px;
+  margin-bottom: 2rem;
 }
 
 /* BODY */
@@ -81,7 +82,7 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin-top: 3vh;
+  margin-top: 5vh;
 }
 
 .table-container {
@@ -111,6 +112,7 @@ button:hover {
  transition: all 0.1s ease-in-out;
 }
 
+/* refresh icon rotation */
 button:hover .fa-sync-alt{
   color: royalblue;
   transition: 0.5s;

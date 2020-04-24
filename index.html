@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta name="author" content="Jin Son &amp; Kyle Kusche">
   <meta name="description" content="Most up-to-date information on Corona Virus in the United States of America">
   <meta name="keywords" content="corona,virus,information,usa,united,states,of,america,covid-19">
@@ -44,13 +44,13 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item active" aria-label="active">
           <a class="nav-link" href="index.html">COVID-19 Tracker</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" aria-label="More Information Tab">
           <a class="nav-link" href="MoreInfo.html">More Information</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" aria-label="About tab">
           <a class="nav-link" href="About.html">About</a>
         </li>
       </ul>
@@ -60,25 +60,35 @@
   <!-- BODY -->
   <div class="container">
     <header>
-      <h1 class="title">COVID-19 Tracker</h1>
-      <h2 class="subtitle">Everything you need to know about the Corona Virus in the United States.</h2>
+      <h1 class="title" aria-label="Title">COVID-19 Tracker</h1>
+      <h2 class="subtitle" aria-label="subtitle">Everything you need to know about the Corona Virus in the United
+        States.</h2>
+      <p>Last updated on :
+        <!-- Replace it with the ServerTime later -->
+        <span id=serverTime></span>
+        <script>
+          let d = new Date();
+          document.getElementById("serverTime").innerHTML = d;
+        </script>
+      </p>
     </header>
     <main>
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-lg-4 stat">
+          <div class="col-md-6 col-lg-4 stat" aria-label="Cases">
             <h2>Cases</h2>
             <h3>845,822</h3>
           </div>
-          <div class="col-md-6 col-lg-4 stat">
+          <div class="col-md-6 col-lg-4 stat" aria-label="Deaths">
             <h2>Deaths</h2>
             <h3>47,479</h3>
           </div>
-          <div class="col-md-6 col-lg-4 stat">
+          <div class="col-md-6 col-lg-4 stat" aria-label="Recoveries">
             <h2>Recoveries</h2>
             <h3>83,917</h3>
           </div>
         </div>
+        <hr>
 
         <div class="table-area">
           <div class="button-area">
@@ -158,34 +168,35 @@
         <div class="state-container">
           <h4>Alabama Trends</h4>
           <div class="charts">
-            <div class="line-chart" id="line-chart-cases"></div>
-            <div class="line-chart" id="line-chart-deaths"></div>
+            <div class="line-chart" id="line-chart-cases" aria-label="Line Chart for cases of COVID in the state"></div>
+            <div class="line-chart" id="line-chart-deaths" aria-label="Line Chart for deaths of COVID in the state">
+            </div>
           </div>
 
 
 
-          <div class="news">
+          <div class="news" aria-label="News for COIVD for the state">
             <h4>Alabama Current Affairs</h4>
             <div class="row">
               <div class="col-lg-4 col-md-6">
                 <iframe src="https://www.youtube.com/embed/-EifJlGP4D4"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                  aria-label="Video 1"></iframe>
               </div>
               <div class="col-lg-4 col-md-6">
                 <iframe src="https://www.youtube.com/embed/L-becUZm7Ww"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                  aria-label="Video 2"></iframe>
               </div>
               <div class="col-lg-4 col-md-6">
                 <iframe src="https://www.youtube.com/embed/6zhhirGRpw0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                  aria-label="Video 3"></iframe>
               </div>
               <div class="col-lg-4 col-md-6">
                 <iframe src="https://www.youtube.com/embed/p_1qNbsFTGE"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                  aria-label="Video 4"></iframe>
               </div>
             </div>
           </div>
