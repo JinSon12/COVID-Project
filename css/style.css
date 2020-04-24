@@ -56,6 +56,14 @@ body {
   line-height: 1.6;
 }
 
+/* ICONS */
+i.fas,
+  i.fab {
+    color: royalblue;
+    margin-right: 5px;  
+  }
+
+
 /* STATS */
 h2 {
   font-size: 9vw;
@@ -69,28 +77,45 @@ h3 {
 }
 
 /* TABLE */
-
+.table-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 3vh;
+}
 
 .table-container {
-  display: block;
   overflow-x: auto;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 50px;
   -webkit-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
 -moz-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
 box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
 }
 
+.button-area{ 
+  display: flex;
+  justify-content: flex-end;
+}
+
 button {
-  display: block;
-  align-items: flex-end;
   border-color: royalblue;
   border-radius: 4px;
   border: 1px solid;
   color: royalblue;
   padding: 5px 10px 5px 10px;
-
 }
+
+button:hover {
+ background-color: rgba(134, 134, 134, 0.1);
+ transition: all 0.1s ease-in-out;
+}
+
+button:hover .fa-sync-alt{
+  color: royalblue;
+  transition: 0.5s;
+  transform: rotate(180deg);
+ }
 
 table {
   font-size: 22px;
@@ -259,11 +284,7 @@ iframe{
 
   .table-container {
     overflow-x: auto;
-    margin-top: 30px;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+   
   }
 
   table {

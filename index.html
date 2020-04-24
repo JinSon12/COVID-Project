@@ -26,6 +26,8 @@
   <link rel="stylesheet" href="/css/style.css">
 
   <!-- Icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 </head>
 
@@ -78,120 +80,118 @@
           </div>
         </div>
 
-        <div class="container table-area">
-          <div class="refresh-button row d-flex justify-content-end mb-2">
-            <div class="col">
-              <button type="button" aria-label="Refresh">
-                <span class="glyphicon glyphicon glyphicon-refresh" aria-hidden="true">Refresh</span>
-              </button>
-            </div>
+        <div class="table-area">
+          <div class="button-area">
+            <button type="button" aria-label="Refresh">
+              <i class="fas fa-sync-alt"></i>
+              Refresh
+            </button>
           </div>
-          <div class="row d-flex justify-content-center">
-            <div class="table-container ">
-              <table>
-                <thead>
-                  <tr>
-                    <th>&nbsp;</th>
-                    <th>Cases</th>
-                    <th>Positive</th>
-                    <th>Negative</th>
-                    <th>Pos/Neg</th>
-                    <th>Recoveries</th>
-                    <th>Deaths</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><a class="state" href="#">Alabama</a></td>
-                    <td>48760</td>
-                    <td>5465</td>
-                    <td>43295</td>
-                    <td>0.03</td>
-                    <td>196</td>
-                    <td>194</td>
-                  </tr>
-                  <tr>
-                    <td><a class="state" href="#">Arkansas</a></td>
-                    <td>29713</td>
-                    <td>2276</td>
-                    <td>27437</td>
-                    <td>0.13</td>
-                    <td>N/A</td>
-                    <td>42</td>
-                  </tr>
-                  <tr>
-                    <td><a class="state" href="#">Arizona</a></td>
-                    <td>56601</td>
-                    <td>5459</td>
-                    <td>51142</td>
-                    <td>0.08</td>
-                    <td>863</td>
-                    <td>229</td>
-                  </tr>
-                  <tr>
-                    <td><a class="state" href="#">California</a></td>
-                    <td>465327</td>
-                    <td>35396</td>
-                    <td>429931</td>
-                    <td>0.08</td>
-                    <td>N/A</td>
-                    <td>1354</td>
-                  </tr>
-                  <tr>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
-                  </tr>
-                </tbody>
-              </table>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>&nbsp;</th>
+                  <th>Cases</th>
+                  <th>Positive</th>
+                  <th>Negative</th>
+                  <th>Pos/Neg</th>
+                  <th>Recoveries</th>
+                  <th>Deaths</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a class="state" href="#">Alabama</a></td>
+                  <td>48760</td>
+                  <td>5465</td>
+                  <td>43295</td>
+                  <td>0.03</td>
+                  <td>196</td>
+                  <td>194</td>
+                </tr>
+                <tr>
+                  <td><a class="state" href="#">Arkansas</a></td>
+                  <td>29713</td>
+                  <td>2276</td>
+                  <td>27437</td>
+                  <td>0.13</td>
+                  <td>N/A</td>
+                  <td>42</td>
+                </tr>
+                <tr>
+                  <td><a class="state" href="#">Arizona</a></td>
+                  <td>56601</td>
+                  <td>5459</td>
+                  <td>51142</td>
+                  <td>0.08</td>
+                  <td>863</td>
+                  <td>229</td>
+                </tr>
+                <tr>
+                  <td><a class="state" href="#">California</a></td>
+                  <td>465327</td>
+                  <td>35396</td>
+                  <td>429931</td>
+                  <td>0.08</td>
+                  <td>N/A</td>
+                  <td>1354</td>
+                </tr>
+                <tr>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+        <hr>
+
+        <div class="state-container">
+          <h4>Alabama Trends</h4>
+          <div class="charts">
+            <div class="line-chart" id="line-chart-cases"></div>
+            <div class="line-chart" id="line-chart-deaths"></div>
+          </div>
+
+
+
+          <div class="news">
+            <h4>Alabama Current Affairs</h4>
+            <div class="row">
+              <div class="col-lg-4 col-md-6">
+                <iframe src="https://www.youtube.com/embed/-EifJlGP4D4"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <iframe src="https://www.youtube.com/embed/L-becUZm7Ww"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <iframe src="https://www.youtube.com/embed/6zhhirGRpw0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <iframe src="https://www.youtube.com/embed/p_1qNbsFTGE"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <hr>
-
-      <div class="state-container">
-        <h4>Alabama Trends</h4>
-        <div class="charts">
-          <div class="line-chart" id="line-chart-cases"></div>
-          <div class="line-chart" id="line-chart-deaths"></div>
-        </div>
-
-
-
-        <div class="news">
-          <h4>Alabama Current Affairs</h4>
-          <div class="row">
-            <div class="col-lg-4 col-md-6">
-              <iframe src="https://www.youtube.com/embed/-EifJlGP4D4"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <iframe src="https://www.youtube.com/embed/L-becUZm7Ww"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <iframe src="https://www.youtube.com/embed/6zhhirGRpw0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <iframe src="https://www.youtube.com/embed/p_1qNbsFTGE"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-  </main>
+    </main>
   </div>
 
 
