@@ -9,6 +9,10 @@
 /* NAVBAR */
 .navbar-dark {
   overflow: hidden;
+  -webkit-box-shadow: 0px 6px 10px -4px rgba(0,0,0,0.37);
+  -moz-box-shadow: 0px 6px 10px -4px rgba(0,0,0,0.37);
+  box-shadow: 0px 6px 10px -4px rgba(0,0,0,0.37);
+  background-color: royalblue;
 }
 
 .navbar-dark a {
@@ -35,6 +39,11 @@ header {
   text-align: center;
 }
 
+header p {
+  text-align: center; 
+  color: grey;
+}
+
 .subtitle {
   color: grey;
   padding-bottom: 10vh;
@@ -48,12 +57,6 @@ body {
 }
 
 /* STATS */
-.america-stats {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 h2 {
   font-size: 9vw;
   margin: 0;
@@ -62,7 +65,7 @@ h2 {
 h3 {
   padding-bottom: 5vh;
   color: royalblue;
-  font-size: 20vw;
+  font-size: 16vw;
 }
 
 /* TABLE */
@@ -70,6 +73,9 @@ h3 {
   overflow-x: auto;
   margin-top: 30px;
   margin-bottom: 50px;
+  -webkit-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
+-moz-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
+box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
 }
 
 table {
@@ -86,9 +92,26 @@ th, td {
   border-bottom: solid 1px #333333;
 }
 
+tr:hover {
+  cursor: pointer;
+  background-color: #d1e3ff !important;
+}
+
 table tr:nth-of-type(even) {
   background-color: #F3F3F3;
 }
+
+
+
+.state {
+  color: royalblue;
+  text-decoration: underline;
+}
+
+.state-container {
+  margin: 8vh 0 0 0;
+}
+
 
 
 /* LINE CHART */
@@ -104,6 +127,11 @@ table tr:nth-of-type(even) {
   left: -25px;
 }
 
+h4 {
+  margin-bottom: 25px;
+  font-size: 40px;
+  text-align: center;
+}
 
 /* About */
 .about-us-parag h3{ 
@@ -121,12 +149,14 @@ table tr:nth-of-type(even) {
 .container-body-parag h3{
   text-align: center;
   padding: 0;
-  font-size: 2rem;
+  font-size: 3rem;
+  
 }
 
 .container-body-parag h4{
   margin-top: 1em;
   text-align: center;
+  font-size: 2rem;
 }
 
 .container-body-parag p {
@@ -159,7 +189,14 @@ table tr:nth-of-type(even) {
   margin-top: 0;
 }
 
+/* NEWS */
+.news {
+   margin-top: 100px;
+}
 
+iframe{
+  border: 0;
+}
 /* Responsiveness  */
 /* MOBILE (>= 598px) */
 @media (min-width: 598px) {
@@ -170,9 +207,7 @@ table tr:nth-of-type(even) {
     font-size: 60px;
   }
   
-  h3 {
-    font-size: 100px;
-  }
+
   .line-chart { /* CHANGE THEIR SIZE ON BIGGER VIEWPORTS */
     display: inline;
   }
@@ -181,21 +216,11 @@ table tr:nth-of-type(even) {
 
 /* Medium (>= 768px) */
 @media (min-width: 768px) {
-  .america-stats {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .stat-info-container {
-    margin: 30px;
-  }
-
   h2 {
     font-size: 40px;
   }
   h3 {
-    font-size: 60px;
+    font-size: 3rem;
   }
 
   .charts {
@@ -210,6 +235,11 @@ table tr:nth-of-type(even) {
 /* Large (>= 992 px) */
 @media (min-width: 992px) {
   header {
+    margin-top: 150px;
+    text-align: center;
+  }
+
+  .stat {
     text-align: center;
   }
 
@@ -238,12 +268,11 @@ table tr:nth-of-type(even) {
 }
 
 /* FOOTER */
-
 .footer-container {
   position: relative;
   background: rgb(243, 243, 243);
   margin: 80px 0 0 0;
-  padding: 50px 0 50px 0;
+  padding: 20px 0 10px 0;
   text-align: center;
 }
 

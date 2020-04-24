@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Jin Son &amp; Kyle Kusche">
+  <meta name="description" content="Most up-to-date information on Corona Virus in the United States of America">
+  <meta name="keywords" content="corona,virus,information,usa,united,states,of,america,covid-19">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Covid-19 Tracker</title>
 
@@ -26,7 +29,7 @@
 
 <body>
   <!-- NAVBAR -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-*" style="background-color: royalblue;">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-*">
     <div class="logo">
       <a href="index.html"><img src="./img/logo2.png" class="nav-logo" alt="Covid-19 Tracker Logo"></a>
     </div>
@@ -50,8 +53,6 @@
     </div>
   </nav>
 
-  <!-- Comment : nice, I moved up the container to be a "box" that holds all the elements inside it! 
-    so we don't have to create container for each div.  -->
   <!-- BODY -->
   <div class="container">
     <header>
@@ -60,20 +61,21 @@
     </header>
     <main>
       <div class="container">
-        <div class="america-stats">
-          <div class="stat-info-container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4 stat">
             <h2>Cases</h2>
             <h3>845,822</h3>
           </div>
-          <div class="stat-info-container">
+          <div class="col-md-6 col-lg-4 stat">
             <h2>Deaths</h2>
             <h3>47,479</h3>
           </div>
-          <div class="stat-info-container">
+          <div class="col-md-6 col-lg-4 stat">
             <h2>Recoveries</h2>
             <h3>83,917</h3>
           </div>
         </div>
+
         <div class="table-container">
           <table>
             <thead>
@@ -89,7 +91,7 @@
             </thead>
             <tbody>
               <tr>
-                <td>Alabama</td>
+                <td><a class="state" href="#">Alabama</a></td>
                 <td>48760</td>
                 <td>5465</td>
                 <td>43295</td>
@@ -98,7 +100,7 @@
                 <td>194</td>
               </tr>
               <tr>
-                <td>Arkansas</td>
+                <td><a class="state" href="#">Arkansas</a></td>
                 <td>29713</td>
                 <td>2276</td>
                 <td>27437</td>
@@ -107,7 +109,7 @@
                 <td>42</td>
               </tr>
               <tr>
-                <td>Arizona</td>
+                <td><a class="state" href="#">Arizona</a></td>
                 <td>56601</td>
                 <td>5459</td>
                 <td>51142</td>
@@ -116,7 +118,7 @@
                 <td>229</td>
               </tr>
               <tr>
-                <td>California</td>
+                <td><a class="state" href="#">California</a></td>
                 <td>465327</td>
                 <td>35396</td>
                 <td>429931</td>
@@ -136,22 +138,55 @@
             </tbody>
           </table>
         </div>
-        <div class="charts">
-          <div class="line-chart" id="line-chart-cases"></div>
-          <div class="line-chart" id="line-chart-deaths"></div>
-        </div>
 
+        <hr>
+
+        <div class="state-container">
+          <h4>Alabama Trends</h4>
+          <div class="charts">
+            <div class="line-chart" id="line-chart-cases"></div>
+            <div class="line-chart" id="line-chart-deaths"></div>
+          </div>
+
+
+
+          <div class="news">
+            <h4>Alabama Current Affairs</h4>
+            <div class="row">
+              <div class="col-lg-4 col-md-6">
+                <iframe src="https://www.youtube.com/embed/-EifJlGP4D4"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <iframe src="https://www.youtube.com/embed/L-becUZm7Ww"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <iframe src="https://www.youtube.com/embed/6zhhirGRpw0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <iframe src="https://www.youtube.com/embed/p_1qNbsFTGE"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
-  </div>
 
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-container">
-      <p>Created by <br> Jin Son & Kyle Kusche <br> 2020 &copy;</p>
-    </div>
-  </footer>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <p>Created by <br> Jin Son &amp; Kyle Kusche <br> 2020 &copy;</p>
+      </div>
+    </footer>
   </div>
 </body>
 
