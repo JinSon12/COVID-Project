@@ -31,7 +31,8 @@
 
 /* HEADER */
 header {
-  margin-top: 150px;
+  margin-top: 10rem;
+  text-align: center;
 }
 
 .subtitle {
@@ -104,56 +105,63 @@ table tr:nth-of-type(even) {
 }
 
 
-/*
-h4 {
-  padding-top: 2vh;
-  padding-bottom: 1vh;
-}
-
-h4 a:before {
-  content: "";
-  color: royalblue;
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: royalblue;
-  border-bottom: 2px solid royalblue;
-  visibility: hidden;
-  transition: all 0.4s ease-in-out;
-}
-
-
-h4 a:hover:before {
-  visibility: visible;
-  width: 100%;
-}
-*/
-
 /* About */
+.about-us-parag h3{ 
+  padding: 1.5rem 0 1rem 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
 
+
+/* More INFO */
 .container-body-parag{
   padding: 2em 0px;
 }
 
 .container-body-parag h3{
+  text-align: center;
   padding: 0;
   font-size: 2rem;
 }
 
-/* More INFO */
-.moreInfo {
-  padding: 1vh 0 1vh 0;
-  font-size: 110%;
-  line-height: 1.4;
+.container-body-parag h4{
+  margin-top: 1em;
+  text-align: center;
 }
 
-.moreInfo li{
+.container-body-parag p {
+  padding: 0.8rem 0 1.3rem 0;
+}
+
+.citation { 
+  margin: 0;
+  padding: 0.1px 0.1px 0.1px 0.1px;
+  text-align: center;
+  font-size: .9em;
+  color: grey;
+}
+
+.citation a{ 
+  font-size: .9em;
+  color: grey;
+  text-decoration: none;
+}
+
+.citation a:hover{ 
+  font-size: .9em;
+  color: rgb(53, 53, 53);
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+
+.container li{
   margin-left: 2rem; 
+  margin-top: 0;
 }
 
 
+/* Responsiveness  */
+/* MOBILE (>= 598px) */
 @media (min-width: 598px) {
   .title {
     font-size: 60px;
@@ -171,7 +179,7 @@ h4 a:hover:before {
 
 }
 
-
+/* Medium (>= 768px) */
 @media (min-width: 768px) {
   .america-stats {
     display: flex;
@@ -199,10 +207,9 @@ h4 a:hover:before {
 }
 
 
-
+/* Large (>= 992 px) */
 @media (min-width: 992px) {
   header {
-    margin-top: 100px;
     text-align: center;
   }
 
@@ -220,6 +227,7 @@ h4 a:hover:before {
   }
 }
 
+/* X-Large (>= 992 px) */
 @media (min-width: 1200px) {
   .title {
     font-size: 75px;
@@ -244,8 +252,3 @@ h4 a:hover:before {
   line-height: 30px;
 }
 
-
-
-/* Color palette:
-#4169e1 -- royal blue
-*/
