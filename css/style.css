@@ -9,6 +9,9 @@
 /* NAVBAR */
 .navbar-dark {
   overflow: hidden;
+  -webkit-box-shadow: 0px 6px 10px -4px rgba(0,0,0,0.37);
+  -moz-box-shadow: 0px 6px 10px -4px rgba(0,0,0,0.37);
+  box-shadow: 0px 6px 10px -4px rgba(0,0,0,0.37);
 }
 
 .navbar-dark a {
@@ -34,20 +37,19 @@ header {
   margin-top: 150px;
 }
 
-
 .subtitle {
   color: grey;
   padding-bottom: 10vh;
   font-size: 25px;
 }
 
-/* STATS */
-.america-stats {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+/* BODY */
+body {
+  font-size: 110%;
+  line-height: 1.6;
 }
 
+/* STATS */
 h2 {
   font-size: 9vw;
   margin: 0;
@@ -56,29 +58,64 @@ h2 {
 h3 {
   padding-bottom: 5vh;
   color: royalblue;
-  font-size: 20vw;
+  font-size: 16vw;
 }
 
 /* TABLE */
-.grade {    
-  display: none; /* Only display on larger screens */
+.table-container {
+  overflow-x: auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  -webkit-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
+  -moz-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
+  box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
 }
 
 table {
-  font-size: 25px;
+  font-size: 22px;
 }
 
+th {
+  background-color: royalblue;
+  color: white;
+}
 
+th, td {
+  padding: 2px;
+  border-bottom: solid 1px #333333;
+}
+
+table tr:nth-of-type(even) {
+  background-color: #F3F3F3;
+}
+
+tr:hover {
+  cursor: pointer;
+  background-color: #d1e3ff !important;
+}
+
+.state {
+  color: royalblue;
+  text-decoration: underline;
+}
 
 /* LINE CHART */
 .line-chart {
   width: 375px;
   height: auto;
+  display: inline-block;
 }
 
 .charts {
   position: relative;
+  overflow: hidden;
   left: -25px;
+}
+
+h4 {
+  text-decoration: underline royalblue;
+  margin-bottom: 25px;
+  font-size: 40px;
 }
 
 /*
@@ -106,62 +143,128 @@ h4 a:hover:before {
   visibility: visible;
   width: 100%;
 }
+*/
 
+/* About */
+.container-body-parag{
+  padding: 2em 0px;
+}
 
+.container-body-parag h3{
+  padding: 0;
+  font-size: 2rem;
+}
 
-.content p {
+/* More INFO */
+.moreInfo {
   padding: 1vh 0 1vh 0;
   font-size: 110%;
   line-height: 1.4;
 }
 
-.whyCovid-container {
-  display: flex;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
+.moreInfo li{
+  margin-left: 2rem; 
 }
 
-.whyCovid-left {
-  display: inline-block;
-  vertical-align: top;
-  justify-content: center;
-  width: 20%;
+.infoCard img {
+  width: 250px;
+  height: auto;
+  border: solid 0px transparent;
+  border-radius: 10px;
+
+  -webkit-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
+  -moz-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
+  box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
+}
+.infoCard p {
+  font-size: 15px;
+  font-weight: 500;
+}
+.infoCard {
+  transition: all .3s ease-in-out;
+}
+.infoCard:hover {
+  transform: scale(1.05);
 }
 
-.whyCovid-left h4 {
-  padding-top: 10px;
-  padding-left: 30px;
-  font-size: 115%;
+/* NEWS */
+.news {
+   margin-top: 100px;
 }
 
-.whyCovid-right {
-  display: inline-block;
-  width: 78%;
+@media (min-width: 598px) {
+  .title {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 60px;
+  }
+  
+  h3 {
+    font-size: 100px;
+  }
+  .line-chart { /* CHANGE THEIR SIZE ON BIGGER VIEWPORTS */
+    display: inline;
+  }
+
 }
 
-#however {
-  text-align: center;
-  padding: 3vh 0 3vh 0;
-  font-weight: 600;
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 60px;
+  }
+
+  .charts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
-.content2 {
-  display: block;
-  margin: 0 0 0 11vw;
-  padding: 3vh 0 3vh 0;
+@media (min-width: 992px) {
+  header {
+    margin-top: 150px;
+    text-align: center;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  table {
+    width: 100%;
+  }
 }
 
-.content2-list {
-  padding: 0vh 0vw 0vh 18vw;
-  font-size: 105%;
+@media (min-width: 1200px) {
+  .title {
+    font-size: 75px;
+  }
+  .subtitle {
+    font-size: 30px;
+  }
 }
-*/
 
+/* FOOTER */
 .footer-container {
   position: relative;
   background: rgb(243, 243, 243);
   margin: 80px 0 0 0;
-  padding: 50px 0 50px 0;
+  padding: 20px 0 10px 0;
   text-align: center;
 }
 
@@ -169,6 +272,8 @@ h4 a:hover:before {
   color: grey;
   line-height: 30px;
 }
+
+
 
 /* Color palette:
 #4169e1 -- royal blue

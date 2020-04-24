@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Jin Son & Kyle Kusche">
+  <meta name="description" content="Most up-to-date information on Corona Virus in the United States of America">
+  <meta name="keywords" content="corona,virus,information,usa,united,states,of,america,covid-19">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Covid-19 Tracker</title>
 
@@ -15,6 +18,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="shortcut icon" type="image/png" href="./favicon.ico">
 
 </head>
 
@@ -31,7 +36,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="index.html">COVID-19 Tracker</a>
         </li>
         <li class="nav-item">
@@ -44,25 +49,66 @@
     </div>
   </nav>
 
-  <!-- Comment : nice, I moved up the container to be a "box" that holds all the elements inside it! 
-    so we don't have to create container for each div.  -->
   <!-- BODY -->
+  <!-- Source : https://en.wikipedia.org/wiki/Coronavirus_disease_2019 -->
   <div class="container">
     <header>
       <h1 class="title">COVID-19 Tracker</h1>
-      <h3 class="subtitle">The most up-to-date information on the Corona Virus in the United States.</h3>
+      <h2 class="subtitle">The most up-to-date information on the Corona Virus in the United States. <br><br>
+        <p style="text-align: center; color: grey">_______</p>
+      </h2>
+
     </header>
+
     <main>
-      <div class="container">
-        <div class="america-stats">
-          <h3>Number of Cases</h3>
-          <h3>XXX,XXX</h3>
-          <h3>Number of Deaths</h3>
-          <h3>X,XXX</h3>
-          <h3>Number of Recoveries</h3>
-          <3>XXX,XXX</3>
+      <div class="container-body-parag">
+        <h3>What is COVID-19?</h3>
+        <p>COVID-19 in a highly infectious disease which was first found in December 2019 in Wuhan, China. Ever since
+          its discovery, it has been spreading across the globe, causing a pandemic.
+          The incubation period of this virus is estimated to be somewhere around from 2 to 10 days. (WHO)
+          CDC, however, estimated that it would be around 2~14 days. It has recently been discovered that it is possible
+          that the symptoms to not be apparent for 45 days.
+        </p>
+
+
+        <h4>Transmission and minimizing the spread</h4>
+        <p>
+          While there has not been many cases reporting the species to species transmission, it is speculated that
+          humans can spread the virus to other species, with feline species being slightly more suceptible to virus than
+          other species.
+        </p>
+        <h4>Seeing a Doctor and Getting Tested</h4>
+        <p>
+          If you get
+        </p>
+
+        <div class="moreInfo">
+          <p>For more information on COVID, please visit following links :</p>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 infoCard">
+                <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" target="_blank">
+                  <img src="img/cdc.jpg" alt="CDC Director Speaking">
+                </a>
+                <p>CDC - Center for Disease Control and Prevention</p>
+              </div>
+              <div class="col-lg-4 infoCard">
+                <a href="https://www.who.int/health-topics/coronavirus#tab=tab_1" target="_blank">
+                  <img src="img/who.jpg" alt="WHO Director Speaking">
+                </a>
+                <p>WHO - World Health Organization</p>
+              </div>
+              <div class="col-lg-4 infoCard">
+                <a href="http://publichealth.lacounty.gov/media/Coronavirus/" target="_blank">
+                  <img src="img/lahealth.jpg" alt="LA County Health Official Speaking">
+                </a>
+                <p>LA County Public Health</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+<!-- a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public" -->
     </main>
   </div>
 
