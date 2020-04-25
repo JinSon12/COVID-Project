@@ -21,6 +21,8 @@ function drawBackgroundColor() {
         [66, 70], [67, 72], [68, 75], [69, 80]
       ]);
 
+      var width = document.querySelector('body').offsetWidth / 2;
+
       var options = {
         hAxis: {
           title: 'Time',
@@ -54,7 +56,7 @@ function drawBackgroundColor() {
         },
         colors: ['#d6392d'], 
         backgroundColor: 'white',
-        'width':400,
+        'width':width,
         'height':300
       };
 

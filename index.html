@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Jin Son & Kyle Kusche">
+  <meta name="author" content="Jin Son &amp; Kyle Kusche">
   <meta name="description" content="Most up-to-date information on Corona Virus in the United States of America">
   <meta name="keywords" content="corona,virus,information,usa,united,states,of,america,covid-19">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,7 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- Line chart -->
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript" src="scripts/LineChart.js"></script>
   <script type="text/javascript" src="scripts/LineChartDeaths.js"></script>
 
@@ -29,7 +29,7 @@
 
 <body>
   <!-- NAVBAR -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-*" style="background-color: royalblue;">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-*">
     <div class="logo">
       <a href="index.html"><img src="./img/logo2.png" class="nav-logo" alt="Covid-19 Tracker Logo"></a>
     </div>
@@ -44,10 +44,10 @@
           <a class="nav-link" href="index.html">COVID-19 Tracker</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="About.html">About</a>
+          <a class="nav-link" href="MoreInfo.html">More Information</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="MoreInfo.html">More Information</a>
+          <a class="nav-link" href="About.html">About</a>
         </li>
       </ul>
     </div>
@@ -139,42 +139,52 @@
           </table>
         </div>
 
-        <div class="charts-container">
+        <hr>
+
+        <div class="state-container" id='line-chart-container'>
           <h4>Alabama Trends</h4>
           <div class="charts">
             <div class="line-chart" id="line-chart-cases"></div>
             <div class="line-chart" id="line-chart-deaths"></div>
           </div>
-        </div>
 
-        <div class="news">
-          <h4>Alabama Current Affairs</h4>
-          <div class="row">
-            <div class="col-lg-4 col-md-6">
-              <iframe src="https://www.youtube.com/embed/-EifJlGP4D4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <iframe src="https://www.youtube.com/embed/L-becUZm7Ww" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <iframe src="https://www.youtube.com/embed/6zhhirGRpw0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>            
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <iframe src="https://www.youtube.com/embed/p_1qNbsFTGE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="news">
+            <h4>Alabama Current Affairs</h4>
+            <div class="row">
+              <div class="col-lg-4 col-md-6">
+                <iframe src="https://www.youtube.com/embed/-EifJlGP4D4"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <iframe src="https://www.youtube.com/embed/L-becUZm7Ww"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <iframe src="https://www.youtube.com/embed/6zhhirGRpw0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <iframe src="https://www.youtube.com/embed/p_1qNbsFTGE"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
             </div>
           </div>
         </div>
-
+      </div>
     </main>
-  </div>
 
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-container">
-      <p>Created by <br> Jin Son & Kyle Kusche <br> 2020 &copy;</p>
-    </div>
-  </footer>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <p>Created by <br> Jin Son &amp; Kyle Kusche <br> 2020 &copy;</p>
+      </div>
+    </footer>
   </div>
 </body>
 

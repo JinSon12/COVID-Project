@@ -21,6 +21,8 @@ function drawBackgroundColor() {
         [66, 70], [67, 72], [68, 75], [69, 80]
       ]);
 
+      var width = document.querySelector('body').offsetWidth / 2;
+      
       var options = {
         hAxis: {
           title: 'Time',
@@ -54,8 +56,8 @@ function drawBackgroundColor() {
         },
         colors: ['royalblue'], 
         backgroundColor: 'white',
-        'width':400,
-        'height':300
+        'width':width,
+        'height': 300,
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('line-chart-cases'));
