@@ -90,8 +90,8 @@ h3 {
   margin-top: 10px;
   margin-bottom: 50px;
   -webkit-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
--moz-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
+  -moz-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
+  box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
 }
 
 .button-area{ 
@@ -191,7 +191,6 @@ h4 {
   text-align: center;
   padding: 0;
   font-size: 3rem;
-  
 }
 
 .container-body-parag h4{
@@ -230,6 +229,33 @@ h4 {
   margin-top: 0;
 }
 
+.infoCard img {
+  width: 250px;
+  height: auto;
+  border: solid 0px transparent;
+  border-radius: 10px;
+
+  -webkit-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
+  -moz-box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
+  box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
+}
+.infoCard p {
+  font-size: 15px;
+  font-weight: 500;
+}
+.infoCard {
+  transition: all .3s ease-in-out;
+}
+.infoCard:hover {
+  transform: scale(1.05);
+}
+
+.moreInfo {
+  margin-top: 40px;
+  font-size: 2em;
+  font-weight: 500;
+}
+
 /* NEWS */
 .news {
    margin-top: 100px;
@@ -242,10 +268,10 @@ iframe{
 /* MOBILE (>= 598px) */
 @media (min-width: 598px) {
   .title {
-    font-size: 60px;
+    font-size: 50px;
   }
   h2 {
-    font-size: 60px;
+    font-size: 50px;
   }
   
 
@@ -297,10 +323,10 @@ iframe{
 /* X-Large (>= 992 px) */
 @media (min-width: 1200px) {
   .title {
-    font-size: 75px;
+    font-size: 60px;
   }
   .subtitle {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 
