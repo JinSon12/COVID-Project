@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <meta name="author" content="Jin Son &amp; Kyle Kusche">
   <meta name="description" content="Most up-to-date information on Corona Virus in the United States of America">
   <meta name="keywords" content="corona,virus,information,usa,united,states,of,america,covid-19">
@@ -93,8 +94,13 @@
 
         <div class="table-area">
           <div class="button-area">
-            <input type="text" placeholder=" search for...">
-            <button type="button" aria-label="Refresh">
+            <div class="search">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAACqUlEQVRoge2ZQWjTUBjH/19asDsrDgZNuu3oWVSEzRXcHG5FPIgIIogMO0QUETxW9CQDRTCpZQfBg+BABEVEXBI8dOouHkQQGbLupJsguNGNtvm8WEgl6/LSNEtHfreXfN/3/n94L+97LRARLsg+OJJd/EjA/u0SIwZ/MLTUwfpIsr/qHBMAQAfsI2mzsE5jpxqh99sjwwuNWhuMcC0+DuBLoHo8QMA3qVI9YX/WYMQs9KwQS8MAvgeqTIwlSLWjs9N9P+wPySkyPVHq5xi/A9ATiDT3/ARqA4bW9/X/F46bXS/IC8w0AuBX26W55zeTNeJkAmjy1TLz8meJaBTAn7ZJc88aER831d5PmwU0/fzOqvI8ER8DsOa7NPeUma0xXU0VmwVteY7oaqpIRCcBbPgmzT0VZpwy873mVoGuDkRdld+A+AyAWqvKBLCI6JyZV166CXZ9shtq6hkTXQDAnqW5h5kxqavyE7cJQi2KqcqPwLgirksQwg0zrzwUSRHutYy8cp9Bt0XzXEN0y1CVO8JpXudLT5ammPma13xn6IGhyZe8ZHrufnU1eZ2Aaa/5Djwe7E5e9prcQhtPvHtFvgjCU+81/lUCP+du+XwuR5bXGi3dR2ZmqLZnefUsCK9aKPN2V7xy2sxRtRUtnveInUNXl7oSZes1CAMieUyYA7qGTXXvaqsafLkhzt1NlmNWNcOAIZBWjFero36YiAgjvuyROkPZRaH2xdAU3+bfqb+idC6RkbARGQkbkZGwERkJG5GRsBEZCRu+GmFg3s96IvhqZCMhDRLhJoB1P+u6wdeLVZ30RKkfMb7HwFizuNBfrPSCvKBryjgRMgjo/8i2bnZdVV6sJ6R9QSy3tiwtJ5yWm59LKzAjdYaypQyBpxhYNjTlcNDzRwTFXwCnvqDlgTStAAAAAElFTkSuQmCC"
+                alt="" class="filter-icon">
+              <input type="text" class="form-control" placeholder=" search for..." aria-label="search bar">
+            </div>
+            <button type="button" aria-label="Refresh button">
               <i class="fas fa-sync-alt"></i>
               Refresh
             </button>
@@ -170,14 +176,14 @@
         <div class="state-container">
           <h4>Alabama Trends</h4>
           <div class="charts">
-            <div class="line-chart" id="line-chart-cases" aria-label="Line Chart for cases of COVID in the state"></div>
-            <div class="line-chart" id="line-chart-deaths" aria-label="Line Chart for deaths of COVID in the state">
+            <div class="line-chart" id="line-chart-cases" role="Line Chart for cases of COVID in the state"></div>
+            <div class="line-chart" id="line-chart-deaths" role="Line Chart for deaths of COVID in the state">
             </div>
           </div>
 
 
 
-          <div class="news" aria-label="News for COIVD for the state">
+          <div class="news" aria-label="News for COIVD for the state" role="news for the state">
             <h4>Alabama Current Affairs</h4>
             <div class="row">
               <div class="col-lg-4 col-md-6">

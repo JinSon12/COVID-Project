@@ -94,10 +94,23 @@ h3 {
   box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.33);
 }
 
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.filter-icon {
+  width: auto;
+  height: 25px;
+  margin-right: .6em;
+  align-items: center;
+}
+
 .button-area{ 
   display: flex;
   justify-content: space-between;
 }
+
 
 button {
   border-color: royalblue;
@@ -181,6 +194,16 @@ h4 {
   font-weight: 600;
 }
 
+.acknowledgement {
+  font-size: .8rem;
+  margin-top: 13vh;
+}
+
+.acknowledgement p {
+  margin: 0;
+  padding: 0;
+}
+
 
 /* More INFO */
 .container-body-parag{
@@ -252,7 +275,7 @@ h4 {
 
 .moreInfo {
   margin-top: 40px;
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: 500;
 }
 
@@ -264,6 +287,10 @@ h4 {
 iframe{
   border: 0;
 }
+
+
+
+
 /* Responsiveness  */
 /* MOBILE (>= 598px) */
 @media (min-width: 598px) {
@@ -274,7 +301,6 @@ iframe{
     font-size: 50px;
   }
   
-
   .line-chart { /* CHANGE THEIR SIZE ON BIGGER VIEWPORTS */
     display: inline;
   }
@@ -341,7 +367,17 @@ iframe{
   
 }
 
-.footer-container p {
+.footer-container-about {
+  display: flex;
+  background-color: rgb(243, 243, 243);
+  margin: 30px 0 0 0;
+  height: 25vh;
+  justify-content: center;
+  align-items: center;
+
+}
+
+footer p {
   text-align: center;
   position: absolute;
   color: grey;
