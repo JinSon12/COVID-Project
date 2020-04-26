@@ -175,33 +175,63 @@
 
         <div class="state-container">
           <h4>Alabama Trends</h4>
-          <div class="charts">
+
+          <div class="charts mb-5">
             <div class="line-chart" id="line-chart-cases" role="Line Chart for cases of COVID in the state"></div>
-            <div class="line-chart" id="line-chart-deaths" role="Line Chart for deaths of COVID in the state">
+            <div class="line-chart" id="line-chart-deaths" role="Line Chart for deaths of COVID in the state"></div>
+          </div>
+
+          <div class="container chart-slider col-xl-4 col-md-6 col-sm-10 mt-5">
+            <div class="row justify-content-center"><label for="chart-slider">Select the Range of Date for the
+                Chart</label>
+            </div>
+            <div class="row mt-3"><input type="range" class="custom-range" min="0" max="5" id="chart-slider">
+            </div>
+            <div class="row justify-content-between">
+              <div class="col col-2 p-0">
+                <p>10 days before</p>
+              </div>
+              <div class="col col-2 p-0 text-right">
+                <p>1 day before</p>
+              </div>
             </div>
           </div>
 
 
 
+
+
           <div class="news" aria-label="News for COIVD for the state" role="news for the state">
             <h4>Alabama Current Affairs</h4>
-            <div class="row">
-              <div class="col-lg-4 col-md-6">
+            <div class="d-flex h-100 justify-content-end flex-wrap mb-5">
+              <label class="mr-2 my-auto" for="numvid">Number of Videos to Display</label>
+              <select class="form-control col-1" id="numvid">
+                <option>select</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+              </select>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-around">
+              <div class="flex-grow-2 col-lg-4 col-md-6 col-xl-4 mx-2">
                 <iframe src="https://www.youtube.com/embed/-EifJlGP4D4"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
                   aria-label="Video 1"></iframe>
               </div>
-              <div class="col-lg-4 col-md-6">
+              <div class="flex-grow-2 col-lg-4 col-md-6 col-xl-4 mx-2">
                 <iframe src="https://www.youtube.com/embed/L-becUZm7Ww"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
                   aria-label="Video 2"></iframe>
               </div>
-              <div class="col-lg-4 col-md-6">
+              <div class="flex-grow-2 col-lg-4 col-md-6 col-xl-4 mx-2">
                 <iframe src="https://www.youtube.com/embed/6zhhirGRpw0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
                   aria-label="Video 3"></iframe>
               </div>
-              <div class="col-lg-4 col-md-6">
+              <div class="flex-grow-2 col-lg-4 col-md-6 col-xl-4 mx-2">
                 <iframe src="https://www.youtube.com/embed/p_1qNbsFTGE"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
                   aria-label="Video 4"></iframe>
@@ -212,6 +242,7 @@
       </div>
     </main>
   </div>
+
 
 
 

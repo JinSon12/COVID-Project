@@ -187,6 +187,11 @@ h4 {
   text-align: center;
 }
 
+.chart-slider p{
+  font-size: .8rem;
+
+}
+
 /* About */
 .about-us-parag h3{ 
   padding: 1.5rem 0 1rem 0;
@@ -281,7 +286,7 @@ h4 {
 
 /* NEWS */
 .news {
-   margin-top: 100px;
+   margin-top: 9rem;
 }
 
 iframe{
@@ -323,7 +328,6 @@ iframe{
     width: 100%;
   }
 }
-
 
 /* Large (>= 992 px) */
 @media (min-width: 992px) {
