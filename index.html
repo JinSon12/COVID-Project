@@ -4,8 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <meta name="author" content="Jin Son &amp; Kyle Kusche">
   <meta name="description" content="Most up-to-date information on Corona Virus in the United States of America">
   <meta name="keywords" content="corona,virus,information,usa,united,states,of,america,covid-19">
@@ -75,6 +73,7 @@
       </p>
     </header>
     <main>
+      <!-- Nationwide Data Area -->
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-lg-4 stat" aria-label="Cases">
@@ -93,7 +92,9 @@
       </div>
       <hr>
 
+      <!-- Table -->
       <div class="table-area">
+        <!-- Table functionalities (inputs) -->
         <div class="button-area">
           <div class="search">
             <img
@@ -107,6 +108,7 @@
           </button>
         </div>
 
+        <!-- Main Table -->
         <div class="table-container">
           <table>
             <thead>
@@ -174,6 +176,7 @@
 
       <hr>
 
+      <!-- State-Wide Information -->
       <div class="state-container">
         <h4>Alabama Trends</h4>
 
@@ -182,6 +185,7 @@
           <div class="line-chart" id="line-chart-deaths" role="Line Chart for deaths of COVID in the state"></div>
         </div>
 
+        <!-- Slider (input for the chart) -->
         <div class="container chart-slider col-xl-4 col-md-6 col-sm-10 mt-5">
           <div class="row justify-content-center">
             <label for="chart-slider">Select the Range of Date for the
@@ -200,9 +204,11 @@
           </div>
         </div>
 
+        <!-- State-News -->
         <div class="news" aria-label="News for COIVD for the state" role="news for the state">
           <h4>Alabama Current Affairs</h4>
           <div class="d-flex h-100 justify-content-end flex-wrap mb-5">
+            <!-- State-News Input Control -->
             <label class="mr-2 my-auto" for="numvid">Number of Videos to Display</label>
             <select class="form-control col-1" id="numvid">
               <option>select</option>
@@ -214,6 +220,7 @@
             </select>
           </div>
 
+          <!-- State News YouTube -->
           <div class="d-flex flex-wrap justify-content-around">
             <div class="col-auto mb-4 ">
               <iframe src="https://www.youtube.com/embed/-EifJlGP4D4"
