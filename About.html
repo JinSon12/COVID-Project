@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="author" content="Jin Son &amp; Kyle Kusche">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <meta name="description" content="Most up-to-date information on Corona Virus in the United States of America">
+  <meta name="keywords" content="corona,virus,information,usa,united,states,of,america,covid-19">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Covid-19 Tracker</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-*">
+    <div class="logo">
+      <a href="index.html"><img src="./img/logo2.png" class="nav-logo" alt="Covid-19 Tracker Logo"></a>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">COVID-19 Tracker</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="MoreInfo.html">More Information</a>
+        </li>
+        <li class="nav-item active" aria-label="active">
+          <a class="nav-link" href="About.html">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Comment : nice, I moved up the container to be a "box" that holds all the elements inside it! 
+    so we don't have to create container for each div.  -->
+  <!-- BODY -->
+  <div class="container">
+    <header>
+      <h1 class="title">COVID-19 Tracker</h1>
+      <h2 class="subtitle">The most up-to-date information on the Corona Virus in the United States. <br> <br>
+        <p>_______</p>
+      </h2>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="container-body-parag">
+          <section>
+            <p>
+              This project was created for Informatics 340 class project for Spring 2020 by Jin Son and Kyle Kusche at
+              the
+              University of Washington. <br>
+              This web app will convey the current information of COVID-19 cases in the United States. Our goal is to
+              provide the users with information both national and state-wide, so that the users can stay informed.
+              Each section contains interactive elements or a form that allows user interaction.
+              <br><br>
+
+              The webpage will provide both the nation-wide and state-wide statistics of the state of the user's
+              choice. <br>
+              The users can filter the states of which statistics that they want to see. There is no need for the users
+              to click on the filter button, as the filtering can be done as soon as they type into the "search for"
+              input field. The users can also choose to refresh the data, to get the most up-to-date statistics.
+
+              <!-- TODO : Once more functionalities are implemented, embed screenshots here to give the users more information about the app.  -->
+              <img class="img-fluid " src="/img/v1table.png" alt="state statistics table">
+              <br>
+              The users can click on the row of the table to see a more detailed statistics for their state of choice.
+              For example, clicking on "Alabama" would render the detailed information visualization of the state, below
+              the statistics table. <br>
+              <img class="img-fluid about-image" src="/img/viz.png"
+                alt="state statistics information visualization chart">
+              The visualization section would include the information of cases and deaths over some time period in
+              the
+              selected state.
+              By default, it would be set to include the data from 5 days ago to current date and time of the access.
+              The users can select the range of the date for the chart by adjusting the slider below the visualization.
+
+              <img class="img-fluid about-image" src="/img/news.png" alt="state news containing YouTube videos">
+              This is the news section, where the users can see the COVID related video clips and news for their state.
+              By default, the number of videos will be 4; however, the users can choose the number of videos that they
+              want to see by using the dropdown menu.
+            </p>
+          </section>
+        </div>
+
+        <div class="about-us-parag">
+          <section>
+            <h3>About Us</h3>
+            <div class="row justify-content-around my-4">
+              <div class="col-sm-auto col-md-6 col-lg-4 col-xl-3 col-mb-2">
+                <img src="/img/Jin.jpg" class="img-fluid rounded float-left" alt="Jin Son">
+              </div>
+              <div class="col col-mt-md-2 col-ml-lg-3">
+                <h4>JIN SON</h4>
+                <p>Hi! I am a front-end developer/UI desinger currently studying at the University of Washington in
+                  Seattle.
+                  I am focused on details and learning from everything/everyone around myself. I love creating new
+                  stuffs
+                  from webpages to web extensions!
+                  Currently, the design project I am working on is for a chrome extension; you can check that out
+                  <a
+                    href="https://adobeid-na1.services.adobe.com/ims/jump/eyJraWQiOiJLMjAxNiIsImFsZyI6IlJTMjU2In0.eyJqdGkiOiIxNTg3OTQ2OTYxNTE0X2U5ZDliYzVkLTBlYjQtNDY4MC04ODBmLWZkYTk2ZTk5NGE2OF91ZTEiLCJjaWQiOiJDb21ldFdlYjEiLCJ1aWQiOiI2RkQzMUFFQjVDOEU1ODlEMEE0OTVDNjVAQWRvYmVJRCIsInJ1IjoiaHR0cHM6Ly94ZC5hZG9iZS5jb20vdmlldy9hNjIwZGJjOS01NzE2LTRlZTQtNGVjOS0zOWUxNDRmMmFiYjItZDAxMS8iLCJydCI6InRva2VuIiwiY2UiOiJBWGFtc1J6M2p5VFFTbU56bS1VTlRhOW5YOVdaUjJVUlBEbzBQZG1QeTRnbWhSQjVrYzBQYU9wQ05HOHdGREQzUFBaM2tMNXNjVFBwWjNNWU5vaW9DelNnTGJLV3VMTjZPV0UwemczTEY3azVQdyIsImV4cCI6MTU4Nzk0Nzg2MTUxNCwicmYiOiJVTUlMSllFVVhMTzU3NzYyQzZZTFFQUUFWTT09PT09PSIsImlzcyI6Imh0dHBzOi8vaW1zLW5hMS5hZG9iZWxvZ2luLmNvbSJ9.Nj_ThIxrW-oKPEX5sa0_QITsqVWdonlHm2ADaqpCjMuSZkc6SS-EWtMRy6pfo4eBwIlNzVLJzmd4XcKDh73NKu7gLywrWzK-DYXEsdJrIUKuKZ4S-T-_Btkgn_JmbjfPca69VmiIS96BPmLSiZB1_LXabOTPUyBG7opkcCzxLbfaGShENLuG28ZWBaZXt5XLRmxVQNBoy7BJLizZbTSgtSXQniOUzcUIieHif_2XZPTtSgi0TWEVQZn63YO05OVuo70EdYx07r2_uLouVV8vBSexN4Zq_fnFYQeEclOYsgHMRZxySr7cBZD3g_XyIzdYZE788g0aRuOqunXFVPz6ag">here</a>.
+                  and another Chrome-extension project that my team has been working on, to aid the non-native speakers
+                  of
+                  English with learning vocabularies will be released on the Chrome extension market soon!
+                </p>
+              </div>
+            </div>
+
+
+            <div class="row justify-content-around my-5">
+              <div class="col-sm-auto col-md-6 col-lg-4 col-xl-3 col-mb-2">
+                <img src="/img/kyle.PNG" class="img-fluid rounded float-left" alt="Kyle Kusche">
+              </div>
+              <div class="col col-mt-md-2 col-ml-lg-3">
+                <h4>KYLE KUSCHE</h4>
+                <p>Hello! I am a self-taught front-end developer and UX/UI Researcher currently studying Human-Computer
+                  Interaction at the University of Washington. Whether I am developing efficient code or sketching new
+                  designs, I love to create. <br>
+                  Check out my portfolio: <a href="https://kylekusche.com">KyleKusche.com</a> </p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="acknowledgement" aria-label="acknowledgement">
+          <p>Some of the icons were sourced from Icons8</p>
+          <a href="https://icons8.com/icon/3720/filter">Icons8</a>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container about">
+      <p>
+        Created by <br>
+        Jin Son &amp; Kyle Kusche<br>
+        2020 &copy;
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>
