@@ -69,12 +69,35 @@
               This project was created for Informatics 340 class project for Spring 2020 by Jin Son and Kyle Kusche at
               the
               University of Washington. <br>
-              This web app will convey the current information of COVID-19 cases in the United States.
-              The users would be able to view both the nation-wide and state-wide statistics of the state of their
-              choice.<br>
+              This web app will convey the current information of COVID-19 cases in the United States. Our goal is to
+              provide the users with information both national and state-wide, so that the users can stay informed.
+              Each section contains interactive elements or a form that allows user interaction.
+              <br><br>
+
+              The webpage will provide both the nation-wide and state-wide statistics of the state of the user's
+              choice. <br>
+              The users can filter the states of which statistics that they want to see. There is no need for the users
+              to click on the filter button, as the filtering can be done as soon as they type into the "search for"
+              input field. The users can also choose to refresh the data, to get the most up-to-date statistics.
+
               <!-- TODO : Once more functionalities are implemented, embed screenshots here to give the users more information about the app.  -->
               <img class="img-fluid " src="/img/v1table.png" alt="state statistics table">
+              <br>
               The users can click on the row of the table to see a more detailed statistics for their state of choice.
+              For example, clicking on "Alabama" would render the detailed information visualization of the state, below
+              the statistics table. <br>
+              <img class="img-fluid about-image" src="/img/viz.png"
+                alt="state statistics information visualization chart">
+              The visualization section would include the information of cases and deaths over some time period in
+              the
+              selected state.
+              By default, it would be set to include the data from 5 days ago to current date and time of the access.
+              The users can select the range of the date for the chart by adjusting the slider below the visualization.
+
+              <img class="img-fluid about-image" src="/img/news.png" alt="state news containing YouTube videos">
+              This is the news section, where the users can see the COVID related video clips and news for their state.
+              By default, the number of videos will be 4; however, the users can choose the number of videos that they
+              want to see by using the dropdown menu.
             </p>
           </section>
         </div>
@@ -125,7 +148,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-container-about">
+    <div class="footer-container about">
       <p>
         Created by <br>
         Jin Son &amp; Kyle Kusche<br>
