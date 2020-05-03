@@ -57,7 +57,8 @@ function drawBackgroundColor() {
         'width':400,
         'height':300
       };
-
+/*
       var chart = new google.visualization.LineChart(document.getElementById('line-chart-cases'));
       chart.draw(data, options);
+*/
     }
