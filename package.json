@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "htmllint": "^0.8.0",
     "jest-style-matchers": "^0.1.2"
   },
   "eslintConfig": {

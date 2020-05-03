@@ -33,7 +33,7 @@ async function _getData() {
     <th>RECOVERED</th> \
     </tr>";
 
-    for (var obj of data) {
+    for (let obj of data) {
       temp += "<tr>";
       temp += "<td>" + obj.state + "</td>";
       temp += "<td>" + obj.totalTestResults + "</td>";

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="author" content="Jin Son &amp; Kyle Kusche">
+  <meta name="description" content="Most up-to-date information on Corona Virus in the United States of America">
+  <meta name="keywords" content="corona,virus,information,usa,united,states,of,america,covid-19">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Covid-19 Tracker</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Line chart -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="scripts/LineChart.js"></script>
+  <script type="text/javascript" src="scripts/LineChartDeaths.js"></script>
+
+  <!-- Bootstrap/CSS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-*">
+    <div class="logo">
+      <a href="index.html"><img src="./img/logo2.png" class="nav-logo" alt="Covid-19 Tracker Logo"></a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active" aria-label="active">
+          <a class="nav-link" href="index.html">COVID-19 Tracker</a>
+        </li>
+        <li class="nav-item" aria-label="More Information Tab">
+          <a class="nav-link" href="MoreInfo.html">More Information</a>
+        </li>
+        <li class="nav-item" aria-label="About tab">
+          <a class="nav-link" href="About.html">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- BODY -->
+  <div class="container">
+    <header>
+      <h1 class="title" aria-label="Title">COVID-19 Tracker</h1>
+      <h2 class="subtitle" aria-label="subtitle">Everything you need to know about the Corona Virus in the United
+        States.</h2>
+      <p>Last updated on :
+        <!-- Replace it with the ServerTime later -->
+        <span id="serverTime"></span>
+        <script>
+          let d = new Date();
+          document.getElementById("serverTime").innerHTML = d;
+        </script>
+      </p>
+    </header>
+    <main>
+      <!-- Nationwide Data Area -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4 stat" aria-label="Cases">
+            <h2>Cases</h2>
+            <h3>845,822</h3>
+          </div>
+          <div class="col-md-6 col-lg-4 stat" aria-label="Deaths">
+            <h2>Deaths</h2>
+            <h3>47,479</h3>
+          </div>
+          <div class="col-md-6 col-lg-4 stat" aria-label="Recoveries">
+            <h2>Recoveries</h2>
+            <h3>83,917</h3>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Table -->
+      <div class="table-area">
+        <!-- Table functionalities (inputs) -->
+        <div class="button-area">
+          <div class="search">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAACqUlEQVRoge2ZQWjTUBjH/19asDsrDgZNuu3oWVSEzRXcHG5FPIgIIogMO0QUETxW9CQDRTCpZQfBg+BABEVEXBI8dOouHkQQGbLupJsguNGNtvm8WEgl6/LSNEtHfreXfN/3/n94L+97LRARLsg+OJJd/EjA/u0SIwZ/MLTUwfpIsr/qHBMAQAfsI2mzsE5jpxqh99sjwwuNWhuMcC0+DuBLoHo8QMA3qVI9YX/WYMQs9KwQS8MAvgeqTIwlSLWjs9N9P+wPySkyPVHq5xi/A9ATiDT3/ARqA4bW9/X/F46bXS/IC8w0AuBX26W55zeTNeJkAmjy1TLz8meJaBTAn7ZJc88aER831d5PmwU0/fzOqvI8ER8DsOa7NPeUma0xXU0VmwVteY7oaqpIRCcBbPgmzT0VZpwy873mVoGuDkRdld+A+AyAWqvKBLCI6JyZV166CXZ9shtq6hkTXQDAnqW5h5kxqavyE7cJQi2KqcqPwLgirksQwg0zrzwUSRHutYy8cp9Bt0XzXEN0y1CVO8JpXudLT5ammPma13xn6IGhyZe8ZHrufnU1eZ2Aaa/5Djwe7E5e9prcQhtPvHtFvgjCU+81/lUCP+du+XwuR5bXGi3dR2ZmqLZnefUsCK9aKPN2V7xy2sxRtRUtnveInUNXl7oSZes1CAMieUyYA7qGTXXvaqsafLkhzt1NlmNWNcOAIZBWjFero36YiAgjvuyROkPZRaH2xdAU3+bfqb+idC6RkbARGQkbkZGwERkJG5GRsBEZCRu+GmFg3s96IvhqZCMhDRLhJoB1P+u6wdeLVZ30RKkfMb7HwFizuNBfrPSCvKBryjgRMgjo/8i2bnZdVV6sJ6R9QSy3tiwtJ5yWm59LKzAjdYaypQyBpxhYNjTlcNDzRwTFXwCnvqDlgTStAAAAAElFTkSuQmCC"
+              alt=" " class="filter-icon">
+            <input type="text" class="form-control" placeholder=" search for..." role="search">
+          </div>
+          <button type="button" aria-label="Refresh button">
+            <i class="fas fa-sync-alt"></i>
+            Refresh
+          </button>
+        </div>
+
+        <!-- Main Table -->
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>&nbsp;</th>
+                <th>Cases</th>
+                <th>Positive</th>
+                <th>Negative</th>
+                <th>Pos/Neg</th>
+                <th>Recoveries</th>
+                <th>Deaths</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="state" href="#">Alabama</a></td>
+                <td>48760</td>
+                <td>5465</td>
+                <td>43295</td>
+                <td>0.03</td>
+                <td>196</td>
+                <td>194</td>
+              </tr>
+              <tr>
+                <td><a class="state" href="#">Arkansas</a></td>
+                <td>29713</td>
+                <td>2276</td>
+                <td>27437</td>
+                <td>0.13</td>
+                <td>N/A</td>
+                <td>42</td>
+              </tr>
+              <tr>
+                <td><a class="state" href="#">Arizona</a></td>
+                <td>56601</td>
+                <td>5459</td>
+                <td>51142</td>
+                <td>0.08</td>
+                <td>863</td>
+                <td>229</td>
+              </tr>
+              <tr>
+                <td><a class="state" href="#">California</a></td>
+                <td>465327</td>
+                <td>35396</td>
+                <td>429931</td>
+                <td>0.08</td>
+                <td>N/A</td>
+                <td>1354</td>
+              </tr>
+              <tr>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="/js/covidApi.js"></script>
+      <script language="javascript">
+        _getData();
+
+      </script>
+
+      <hr>
+
+      <!-- State-Wide Information -->
+      <div class="state-container">
+        <h4>Alabama Trends</h4>
+
+        <div class="charts mb-5">
+          <div class="line-chart" id="line-chart-cases" role="Line Chart for cases of COVID in the state"></div>
+          <div class="line-chart" id="line-chart-deaths" role="Line Chart for deaths of COVID in the state"></div>
+        </div>
+
+        <!-- Slider (input for the chart) -->
+        <div class="container chart-slider col-xl-4 col-md-6 col-sm-10 mt-5">
+          <div class="row justify-content-center">
+            <label for="chart-slider">Select the Range of Date for the
+              Chart
+            </label>
+          </div>
+          <div class="row mt-3"><input type="range" class="custom-range" min="0" max="5" id="chart-slider">
+          </div>
+          <div class="row justify-content-between">
+            <div class="col col-2 p-0">
+              <p>10 days before</p>
+            </div>
+            <div class="col col-2 p-0 text-right">
+              <p>1 day before</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- State-News -->
+        <div class="news" aria-label="News for COIVD for the state" role="news for the state">
+          <h4>Alabama Current Affairs</h4>
+          <div class="d-flex h-100 justify-content-end flex-wrap mb-5">
+            <!-- State-News Input Control -->
+            <label class="mr-2 my-auto" for="numvid">Number of Videos to Display</label>
+            <select class="form-control col-1" id="numvid">
+              <option>select</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
+          </div>
+
+          <!-- State News YouTube -->
+          <div class="d-flex flex-wrap justify-content-around">
+            <div class="col-auto mb-4 ">
+              <iframe src="https://www.youtube.com/embed/-EifJlGP4D4"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                aria-label="Video 1"></iframe>
+            </div>
+            <div class="col-auto mb-4">
+              <iframe src="https://www.youtube.com/embed/L-becUZm7Ww"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                aria-label="Video 2"></iframe>
+            </div>
+            <div class="col-auto mb-4">
+              <iframe src="https://www.youtube.com/embed/6zhhirGRpw0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                aria-label="Video 3"></iframe>
+            </div>
+            <div class="col-auto mb-4">
+              <iframe src="https://www.youtube.com/embed/p_1qNbsFTGE"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                aria-label="Video 4"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <p>Created by <br> Jin Son &amp; Kyle Kusche <br> 2020 &copy;</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
