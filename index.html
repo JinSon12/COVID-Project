@@ -173,13 +173,25 @@
         </div>
       </div>
 
-      <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="/js/covidApi.js"></script>
-      <script language="javascript">
-        _getData();
+      <div>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+          integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/covidApi.js"></script>
+        <script language="javascript">
+          _getData();
 
-      </script>
+        </script>
+        <table id="tableStates">
+          <tr>
+            <th>STATE</th>
+            <th>Total Test Results</th>
+            <th>POSITIVE</th>
+            <th>NEGATIVE</th>
+            <th>DEATHS</th>
+            <th>RECOVERED</th>
+          </tr>
+        </table>
+      </div>
 
       <hr>
 

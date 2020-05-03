@@ -44,7 +44,8 @@ async function _getData() {
     }
   }
 
-  document.getElementById("states").innerHTML = temp;
+  _getData();
+  document.getElementById("tableStates").innerHTML = temp;
   console.log(data);
 
 }
