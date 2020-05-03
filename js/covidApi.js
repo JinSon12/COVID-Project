@@ -9,7 +9,7 @@ var requestOptions = {
 
 // why return must be included here? async and promise textbook check 
 function _callApi() {
-  return fetch("https://covidtracking.com/api/states", requestOptions)
+  return fetch("https://covidtracking.com/api/states/daily", requestOptions)
     .then(response => response.json())
     .then(json => json)
     .catch(error => console.log('error', error));
@@ -44,7 +44,7 @@ async function _getData() {
     }
   }
 
-  _getData();
+
   document.getElementById("tableStates").innerHTML = temp;
   console.log(data);
 
