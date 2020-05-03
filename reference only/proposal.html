@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>INFO Proposal for Project-01 </title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header class="item-container">
+    <h2 class="item1"><a id="home" href="proposal.html">Jin's Project Proposal For INFO 340</a></h2>
+  </header>
+  <div id="divide">
+    <div id="wrapper">
+      <nav class="nav-container">
+        <ul class="nav-container-ul">
+          <li><a href="problemDomain.html">Problem Domain</a></li>
+          <li><a href="application.html">Application</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div id="wrapper">
+    <div class="overview">
+      <h3>Brief Overview of the Project: </h3>
+      <p> Here are some things you can do with the webpage...
+        <ul>
+          <li>Retrieve Data</li>
+          <li>Input different values for country</li>
+          <li>Input different values for age groups</li>
+        </ul>
+      </p>
+    </div>
+    <div>
+      <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="/js/covidApi.js"></script>
+      <script language="javascript">
+        _getData();
+
+      </script>
+    </div>
+    <div class="result">
+      <div class="result-heading">
+        <h3>
+          Table of COVID information for 50 states
+        </h3>
+      </div>
+      <table id="states" class="table">
+        <tr>
+          <th>STATE</th>
+          <th>Total Test Results</th>
+          <th>POSITIVE</th>
+          <th>NEGATIVE</th>
+          <th>DEATHS</th>
+          <th>RECOVERED</th>
+        </tr>
+
+
+      </table>
+    </div>
+
+  </div>
+
+</body>
+
+
+</html>
