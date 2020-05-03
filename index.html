@@ -23,7 +23,7 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
@@ -173,6 +173,25 @@
         </div>
       </div>
 
+      <div>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+          integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/covidApi.js"></script>
+        <script language="javascript">
+          _getData();
+
+        </script>
+        <table id="tableStates">
+          <tr>
+            <th>STATE</th>
+            <th>Total Test Results</th>
+            <th>POSITIVE</th>
+            <th>NEGATIVE</th>
+            <th>DEATHS</th>
+            <th>RECOVERED</th>
+          </tr>
+        </table>
+      </div>
 
       <hr>
 
