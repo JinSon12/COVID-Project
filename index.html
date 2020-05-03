@@ -110,135 +110,72 @@
 
         <!-- Main Table -->
         <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>&nbsp;</th>
-                <th>Cases</th>
-                <th>Positive</th>
-                <th>Negative</th>
-                <th>Pos/Neg</th>
-                <th>Recoveries</th>
-                <th>Deaths</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><a class="state" href="#">Alabama</a></td>
-                <td>48760</td>
-                <td>5465</td>
-                <td>43295</td>
-                <td>0.03</td>
-                <td>196</td>
-                <td>194</td>
-              </tr>
-              <tr>
-                <td><a class="state" href="#">Arkansas</a></td>
-                <td>29713</td>
-                <td>2276</td>
-                <td>27437</td>
-                <td>0.13</td>
-                <td>N/A</td>
-                <td>42</td>
-              </tr>
-              <tr>
-                <td><a class="state" href="#">Arizona</a></td>
-                <td>56601</td>
-                <td>5459</td>
-                <td>51142</td>
-                <td>0.08</td>
-                <td>863</td>
-                <td>229</td>
-              </tr>
-              <tr>
-                <td><a class="state" href="#">California</a></td>
-                <td>465327</td>
-                <td>35396</td>
-                <td>429931</td>
-                <td>0.08</td>
-                <td>N/A</td>
-                <td>1354</td>
-              </tr>
-              <tr>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-              </tr>
-            </tbody>
+          <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+          <script type="text/javascript" src="js/covidApi.js"></script>
+          <script language="javascript">
+            _getData();
+
+          </script>
+          <table id="tableStates">
+            <tr>
+              <th>STATE</th>
+              <th>Total Test Results</th>
+              <th>POSITIVE</th>
+              <th>NEGATIVE</th>
+              <th>DEATHS</th>
+              <th>RECOVERED</th>
+            </tr>
           </table>
         </div>
-      </div>
 
-      <div>
-        <script src="https://code.jquery.com/jquery-3.4.1.js"
-          integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="js/covidApi.js"></script>
-        <script language="javascript">
-          _getData();
+        <hr>
 
-        </script>
-        <table id="tableStates">
-          <tr>
-            <th>STATE</th>
-            <th>Total Test Results</th>
-            <th>POSITIVE</th>
-            <th>NEGATIVE</th>
-            <th>DEATHS</th>
-            <th>RECOVERED</th>
-          </tr>
-        </table>
-      </div>
+        <!-- State-Wide Information -->
+        <div class="state-container">
+          <h4>Alabama Trends</h4>
 
-      <hr>
-
-      <!-- State-Wide Information -->
-      <div class="state-container">
-        <h4>Alabama Trends</h4>
-
-        <div class="charts mb-5">
-          <div class="line-chart" id="line-chart-cases" role="Line Chart for cases of COVID in the state"></div>
-          <div class="line-chart" id="line-chart-deaths" role="Line Chart for deaths of COVID in the state"></div>
-        </div>
-
-        <!-- Slider (input for the chart) -->
-        <div class="container chart-slider col-xl-4 col-md-6 col-sm-10 mt-5">
-          <div class="row justify-content-center">
-            <label for="chart-slider">Select the Range of Date for the
-              Charts
-            </label>
+          <div class="charts mb-5">
+            <div class="line-chart" id="line-chart-cases" role="Line Chart for cases of COVID in the state"></div>
+            <div class="line-chart" id="line-chart-deaths" role="Line Chart for deaths of COVID in the state"></div>
           </div>
-          <div class="row mt-3"><input type="range" class="custom-range" min="0" max="25" id="chart-slider" onchange="drawLineChart(); drawLineChart2()">
-          </div>
-          <div class="row justify-content-between">
-            <div class="col col-2 p-0">
-              <p>30 days before</p>
+
+          <!-- Slider (input for the chart) -->
+          <div class="container chart-slider col-xl-4 col-md-6 col-sm-10 mt-5">
+            <div class="row justify-content-center">
+              <label for="chart-slider">Select the Range of Date for the
+                Charts
+              </label>
             </div>
-            <div class="col col-2 p-0 text-right">
-              <p>5 days before</p>
+            <div class="row mt-3"><input type="range" class="custom-range" min="0" max="25" id="chart-slider"
+                onchange="drawLineChart(); drawLineChart2()">
+            </div>
+            <div class="row justify-content-between">
+              <div class="col col-2 p-0">
+                <p>30 days before</p>
+              </div>
+              <div class="col col-2 p-0 text-right">
+                <p>5 days before</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- State-News -->
-        <div class="news" aria-label="News for COIVD for the state" role="news for the state">
-          <h4>Alabama Current Affairs</h4>
-          <div class="d-flex h-100 justify-content-end flex-wrap mb-5">
-            <!-- State-News Input Control -->
-            <label class="mr-2 my-auto" for="numvid">Number of Videos to Display</label>
-            <select class="form-control col-1" id="numvid">
-              <option>select</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-            </select>
-          </div>
-<!--
+          <!-- State-News -->
+          <div class="news" aria-label="News for COIVD for the state" role="news for the state">
+            <h4>Alabama Current Affairs</h4>
+            <div class="d-flex h-100 justify-content-end flex-wrap mb-5">
+              <!-- State-News Input Control -->
+              <label class="mr-2 my-auto" for="numvid">Number of Videos to Display</label>
+              <select class="form-control col-1" id="numvid">
+                <option>select</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+              </select>
+            </div>
+            <!--
            State News YouTube
           <div class="d-flex flex-wrap justify-content-around">
             <div class="col-auto mb-4 ">
@@ -263,8 +200,8 @@
             </div>
           </div>
           -->
+          </div>
         </div>
-      </div>
     </main>
   </div>
 
