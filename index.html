@@ -14,8 +14,8 @@
 
   <!-- Line chart -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript" src="scripts/LineChart.js"></script>
   <script type="text/javascript" src="scripts/LineChartDeaths.js"></script>
+  <script type="text/javascript" src="scripts/LineChartCases.js"></script>
 
   <!-- Bootstrap/CSS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
@@ -208,17 +208,17 @@
         <div class="container chart-slider col-xl-4 col-md-6 col-sm-10 mt-5">
           <div class="row justify-content-center">
             <label for="chart-slider">Select the Range of Date for the
-              Chart
+              Charts
             </label>
           </div>
-          <div class="row mt-3"><input type="range" class="custom-range" min="0" max="5" id="chart-slider">
+          <div class="row mt-3"><input type="range" class="custom-range" min="0" max="25" id="chart-slider" onchange="drawLineChart(); drawLineChart2()">
           </div>
           <div class="row justify-content-between">
             <div class="col col-2 p-0">
-              <p>10 days before</p>
+              <p>30 days before</p>
             </div>
             <div class="col col-2 p-0 text-right">
-              <p>1 day before</p>
+              <p>5 days before</p>
             </div>
           </div>
         </div>
@@ -238,8 +238,8 @@
               <option>6</option>
             </select>
           </div>
-
-          <!-- State News YouTube -->
+<!--
+           State News YouTube
           <div class="d-flex flex-wrap justify-content-around">
             <div class="col-auto mb-4 ">
               <iframe src="https://www.youtube.com/embed/-EifJlGP4D4"
@@ -262,6 +262,7 @@
                 aria-label="Video 4"></iframe>
             </div>
           </div>
+          -->
         </div>
       </div>
     </main>
