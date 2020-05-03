@@ -170,15 +170,8 @@ table tr:nth-of-type(even) {
 
 /* LINE CHART */
 .line-chart {
-  width: 375px;
   height: auto;
   display: inline-block;
-}
-
-.charts {
-  position: relative;
-  overflow: hidden;
-  left: -25px;
 }
 
 h4 {
@@ -349,7 +342,11 @@ iframe{
 
   .table-container {
     overflow-x: auto;
-   
+  }
+
+  .line-chart {
+    margin-right: 75px;
+    margin-left: 75px;
   }
 
   table {

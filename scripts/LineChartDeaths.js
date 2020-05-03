@@ -1,64 +1,88 @@
-google.charts.load('current', {packages: ['corechart', 'line']});
-google.charts.setOnLoadCallback(drawBackgroundColor);
+google.charts.load('current', { packages: ['line'] });
+google.charts.setOnLoadCallback(drawLineChart2);
 
-function drawBackgroundColor() {
-      var data = new google.visualization.DataTable();
-      data.addColumn('number', 'X');
-      data.addColumn('number', 'Deaths');
+function getRange() {
+  let value = document.getElementById('chart-slider').value;
+  let range = 1679 - value * 55; // 1679 represents 30 days ago from today. There are approx. 55 inserts for each day
+  return range;
+}
 
-      data.addRows([
-        [0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
-        [6, 11],  [7, 27],  [8, 33],  [9, 40],  [10, 32], [11, 35],
-        [12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
-        [18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
-        [24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
-        [30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
-        [36, 62], [37, 58], [38, 55], [39, 61], [40, 64], [41, 65],
-        [42, 63], [43, 66], [44, 67], [45, 69], [46, 69], [47, 70],
-        [48, 72], [49, 68], [50, 66], [51, 65], [52, 67], [53, 70],
-        [54, 71], [55, 72], [56, 73], [57, 75], [58, 70], [59, 68],
-        [60, 64], [61, 60], [62, 65], [63, 67], [64, 68], [65, 69],
-        [66, 70], [67, 72], [68, 75], [69, 80]
-      ]);
+function drawLineChart2() {
+  $.ajax({
+      url: 'https://covidtracking.com/api/states/daily',
+      dataType: 'json',
+      type: 'GET',
+      contentType: 'application/json; charset=utf-8',
+      success: function (data) {
+          var arrCases = [['Date', 'Cases']]; // assign column names
 
-      var options = {
-        hAxis: {
-          title: 'Time',
-          textStyle: {
-            color: '#333333',
-            fontSize: 12,
-            fontName: 'Arial',
-            bold: true,
-          },
-          titleTextStyle: {
-            color: '#333333',
-            fontSize: 20,
-            bold: true,
-            italic: false
-        }
-        },
-        vAxis: {
-          title: 'Deaths',
-          textStyle: {
-            color: '#333333',
-            fontSize: 12,
-            fontName: 'Arial',
-            bold: true,
-          },
-          titleTextStyle: {
-              color: '#333333',
-              fontSize: 20,
-              bold: true,
-              italic: false
+          for (let i = getRange(); i >= 0; i--) {   // User value represents chart range
+              if (data[i].state == 'AK') {          // User value represents state info
+                  let date = data[i].date.toString();
+                  let newDate = date.substring(4,6) + '-' + date.substring(6, 9);
+                  arrCases.push([newDate, data[i].death]);
+              }
           }
-        },
-        colors: ['#d6392d'], 
-        backgroundColor: 'white',
-        'width':400,
-        'height':300
-      };
+
+          let chartWidth;
+            if (window.innerWidth <= 600) {
+                chartWidth = 350;
+            } else {
+                chartWidth = 500;
+            }
+
+          var options = {
+              hAxis: {
+                title: 'Date',
+                textStyle: {
+                  color: '#333333',
+                  fontSize: 12,
+                  fontName: 'Arial',
+                  bold: true,
+                },
+                titleTextStyle: {
+                  color: '#333333',
+                  fontSize: 20,
+                  bold: true,
+                  italic: false
+                }
+              },
+              vAxis: {
+                title: 'Total Deaths',
+                textStyle: {
+                  color: '#333333',
+                  fontSize: 12,
+                  fontName: 'Arial',
+                  bold: true,
+                },
+                titleTextStyle: {
+                    color: '#333333',
+                    fontSize: 20,
+                    bold: true,
+                    italic: false
+                }
+              },
+              legend: {
+                position: 'none'
+              },
+              colors: ['#d6392d'], 
+              backgroundColor: 'white',
+              'width':chartWidth,
+              'height':300
+            };
 
 
-      var chart = new google.visualization.LineChart(document.getElementById('line-chart-deaths'));
-      chart.draw(data, options);
-    }
+          // Create DataTable and add the array to it.
+          var figures = google.visualization.arrayToDataTable(arrCases);
+
+          // Define the chart type (LineChart) and the container (a DIV in our case).
+          var chart = new google.charts.Line(document.getElementById('line-chart-deaths'));
+
+          // Draw the chart with Options.
+          chart.draw(figures, google.charts.Line.convertOptions(options));
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+          alert('Got an Error');
+      }
+  });
+}

@@ -1,6 +1,12 @@
 google.charts.load('current', { packages: ['line'] });
 google.charts.setOnLoadCallback(drawLineChart);
 
+function getRange() {
+    let value = document.getElementById('chart-slider').value;
+    let range = 1679 - value * 55; // 1679 represents 30 days ago from today. There are approx. 55 inserts for each day
+    return range;
+}
+
 function drawLineChart() {
     $.ajax({
         url: 'https://covidtracking.com/api/states/daily',
@@ -10,22 +16,60 @@ function drawLineChart() {
         success: function (data) {
             var arrCases = [['Date', 'Cases']]; // assign column names
 
-            for (let i = 0; i < 600; i += 55) {
-                arrCases.push([data[i].date, data[i].positive]);
+            for (let i = getRange(); i >= 0; i--) {   // User value represents chart range
+                if (data[i].state == 'AK') {          // User value represents state info
+                    let date = data[i].date.toString();
+                    let newDate = date.substring(4,6) + '-' + date.substring(6, 9);
+                    arrCases.push([newDate, data[i].total]);
+                }
             }
 
-            // Set chart options
+            let chartWidth;
+            if (window.innerWidth <= 600) {
+                chartWidth = 350;
+            } else {
+                chartWidth = 500;
+            }
+
             var options = {
-                chart: {
-                    title: 'Cases',
-                    subtitle: '-- total positive'
+                hAxis: {
+                  title: 'Date',
+                  textStyle: {
+                    color: '#333333',
+                    fontSize: 12,
+                    fontName: 'Arial',
+                    bold: true,
+                  },
+                  titleTextStyle: {
+                    color: '#333333',
+                    fontSize: 20,
+                    bold: true,
+                    italic: false
+                  }
                 },
-                axes: {
-                    x: {
-                        0: { side: 'top'}   // Use "top" or "bottom".
-                    }
-                }
-            };
+                vAxis: {
+                  title: 'Total Cases',
+                  textStyle: {
+                    color: '#333333',
+                    fontSize: 12,
+                    fontName: 'Arial',
+                    bold: true,
+                  },
+                  titleTextStyle: {
+                      color: '#333333',
+                      fontSize: 20,
+                      bold: true,
+                      italic: false,
+                  }
+                },
+                legend: {
+                    position: 'none'
+                },
+                colors: ['royalblue'], 
+                backgroundColor: 'white',
+                'width':chartWidth,
+                'height':300
+              };
 
 
             // Create DataTable and add the array to it.
