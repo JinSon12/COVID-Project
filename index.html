@@ -114,6 +114,7 @@
 
         <!-- Main Table -->
         <div class="table-container">
+          <script src="./scripts/ChooseState.js"></script>
           <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
           <script language="javascript">
@@ -131,11 +132,11 @@
           </table>
         </div>
 
-        <hr>
+        <hr id="state-container">
 
         <!-- State-Wide Information -->
         <div class="state-container">
-          <h4>Alabama Trends</h4>
+          <h4 id="state-name">Alaska Trends</h4>
 
           <div class="charts mb-5">
             <div class="line-chart" id="line-chart-cases" role="Line Chart for cases of COVID in the state"></div>
@@ -164,7 +165,7 @@
 
           <!-- State-News -->
           <div class="news" aria-label="News for COIVD for the state" role="news for the state">
-            <h4>Alabama Current Affairs</h4>
+            <h4 id='state-affairs'>Alaska Current Affairs</h4>
             <div class="d-flex h-100 justify-content-end flex-wrap mb-5">
               <!-- State-News Input Control -->
               <label class="mr-2 my-auto" for="numvid">Number of Videos to Display</label>

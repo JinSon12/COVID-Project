@@ -39,7 +39,7 @@ async function _getData() {
     let maxnum = 56;
     for (let i = 0; i < maxnum; i++) {
       temp += "<tr>";
-      temp += "<td>" + data[i].state + "</td>";
+      temp += "<td onclick=\"chooseState(\'"+ data[i].state +"\')\"><a href='#state-container'>" + data[i].state + "</a></td>";
       temp += "<td>" + data[i].totalTestResults + "</td>";
       temp += "<td>" + data[i].positive + "</td>";
       temp += "<td>" + data[i].negative + "</td>";
@@ -50,9 +50,12 @@ async function _getData() {
   }
 
   document.getElementById("tableStates").innerHTML = temp;
+<<<<<<< HEAD
   console.log(tableData);
   console.log(data);
 
+=======
+>>>>>>> master
 }
 
 // search function 

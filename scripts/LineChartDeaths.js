@@ -17,7 +17,7 @@ function drawLineChart2() {
           var arrCases = [['Date', 'Cases']]; // assign column names
 
           for (let i = getRange(); i >= 0; i--) {   // User value represents chart range
-              if (data[i].state == 'AK') {          // User value represents state info
+              if (data[i].state == getAbbrev()) {   // User value represents state info
                   let date = data[i].date.toString();
                   let newDate = date.substring(4,6) + '-' + date.substring(6, 9);
                   arrCases.push([newDate, data[i].death]);
