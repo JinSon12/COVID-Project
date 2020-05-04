@@ -1,11 +1,12 @@
 //TD : get api using jQuery 
 
 
-
-var requestOptions = {
+let requestOptions = {
   method: 'GET',
   redirect: 'follow'
 };
+
+let tableData = [];
 
 // why return must be included here? async and promise textbook check 
 function _callApi() {
@@ -15,23 +16,25 @@ function _callApi() {
     .catch(error => console.log('error', error));
 }
 
+// creates a table 
 async function _getData() {
-  console.log("abe");
+  console.log("getData async function");
   const data = await _callApi()
-  console.log("abb")
+  console.log("called API")
 
-  // for iterating and adding to the temp array "temp" to table id="states" 
+  // for iterating and adding to the temp array "temp" to table id="tableStates" 
   // backlash for readablility 
+  let temp = "\
+  <tr> \
+  <th>STATE</th> \
+  <th>Total Test Results</th> \
+  <th>POSITIVE</th> \
+  <th>NEGATIVE</th> \
+  <th>DEATHS</th> \
+  <th>RECOVERED</th> \
+  </tr>";
+
   if (data.length > 0) {
-    var temp = "\
-    <tr> \
-    <th>STATE</th> \
-    <th>Total Test Results</th> \
-    <th>POSITIVE</th> \
-    <th>NEGATIVE</th> \
-    <th>DEATHS</th> \
-    <th>RECOVERED</th> \
-    </tr>";
 
     let maxnum = 56;
     for (let i = 0; i < maxnum; i++) {
@@ -42,8 +45,40 @@ async function _getData() {
       temp += "<td>" + data[i].negative + "</td>";
       temp += "<td>" + data[i].death + "</td>";
       temp += "<td>" + data[i].recovered + "</td></tr>";
+      tableData.push(data[i].state);
     }
   }
 
   document.getElementById("tableStates").innerHTML = temp;
+<<<<<<< HEAD
+  console.log(tableData);
+  console.log(data);
+
+=======
+>>>>>>> master
 }
+
+// search function 
+function search() {
+  let inputval = document.getElementById("search").value.toUpperCase();
+  let table = document.getElementById("tableStates");
+  let tableRow = table.getElementsByTagName("tr");
+
+  for (let i = 1; i < tableRow.length; i++) {
+    let tdata = tableRow[i].cells[0].innerHTML;
+    if (tdata.includes(inputval)) {
+      tableRow[i].style.display = "";
+    } else {
+      tableRow[i].style.display = "none";
+    }
+  }
+
+
+
+
+
+
+
+
+}
+
