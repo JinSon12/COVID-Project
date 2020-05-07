@@ -19,8 +19,8 @@ function _callApi() {
 // creates a table 
 async function _getData() {
   console.log("getData async function");
-  const data = await _callApi()
-  console.log("called API")
+  const data = await _callApi();
+  console.log("called API");
 
   // for iterating and adding to the temp array "temp" to table id="tableStates" 
   // backlash for readablility 
@@ -38,8 +38,9 @@ async function _getData() {
     //chooseState(\'" + data[i].state + "\')
     let maxnum = 56;
     for (let i = 0; i < maxnum; i++) {
+      let stateName = stateCodes[data[i].state];
       temp += "<tr onclick=location.href=\'#state-container\'\;chooseState(\'" + data[i].state + "\')>";
-      temp += "<td>" + data[i].state + "</td>";
+      temp += "<td>" + stateName + "</td>";
       temp += "<td>" + data[i].totalTestResults + "</td>";
       temp += "<td>" + data[i].positive + "</td>";
       temp += "<td>" + data[i].negative + "</td>";
@@ -66,13 +67,4 @@ function search() {
       tableRow[i].style.display = "none";
     }
   }
-
-
-
-
-
-
-
-
 }
-

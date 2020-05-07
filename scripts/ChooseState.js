@@ -69,6 +69,9 @@ function chooseState(abbrev) {
     // redraw the charts after new state is chosen
     drawLineChart();
     drawLineChart2();
+
+    // finds state-specific videos
+    getVideos();
 }
 
 function getAbbrev() {
