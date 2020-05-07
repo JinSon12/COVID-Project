@@ -10,12 +10,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Covid-19 Tracker</title>
 
+  <!-- AJAX & Polyfill -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
 
-  <!-- Line chart -->
+  <!-- Line charts -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript" src="scripts/LineChartDeaths.js"></script>
   <script type="text/javascript" src="scripts/LineChartCases.js"></script>
+
+  <!-- Choose State and Youtube API calls -->
+  <script src="./scripts/ChooseState.js"></script>
+  <script src="./js/youtubeAPI.js"></script>
+  <!-- <script src="https://apis.google.com/js/api.js"></script> -->
 
   <!-- Bootstrap/CSS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
@@ -29,7 +36,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
     integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-  <!-- Scripts -->
+  <!-- Main Covid API tracker -->
   <script type="text/javascript" src="js/covidApi.js"></script>
 
 </head>
@@ -114,7 +121,6 @@
 
         <!-- Main Table -->
         <div class="table-container">
-          <script src="./scripts/ChooseState.js"></script>
           <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
           <script language="javascript">
@@ -178,31 +184,11 @@
                 <option>6</option>
               </select>
             </div>
-            <!--
+            
            State News YouTube
-          <div class="d-flex flex-wrap justify-content-around">
-            <div class="col-auto mb-4 ">
-              <iframe src="https://www.youtube.com/embed/-EifJlGP4D4"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                aria-label="Video 1"></iframe>
-            </div>
-            <div class="col-auto mb-4">
-              <iframe src="https://www.youtube.com/embed/L-becUZm7Ww"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                aria-label="Video 2"></iframe>
-            </div>
-            <div class="col-auto mb-4">
-              <iframe src="https://www.youtube.com/embed/6zhhirGRpw0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                aria-label="Video 3"></iframe>
-            </div>
-            <div class="col-auto mb-4">
-              <iframe src="https://www.youtube.com/embed/p_1qNbsFTGE"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                aria-label="Video 4"></iframe>
-            </div>
+          <div class="d-flex flex-wrap justify-content-around" id='video-container'>
+            
           </div>
-          -->
           </div>
         </div>
     </main>
