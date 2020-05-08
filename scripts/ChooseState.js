@@ -71,7 +71,7 @@ function chooseState(abbrev) {
     drawLineChart2();
 
     // finds state-specific news
-    _getNews();
+    getNews();
 }
 
 function getAbbrev() {

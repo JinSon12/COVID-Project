@@ -39,6 +39,10 @@
   <script type="text/javascript" src="js/covidApi.js"></script>
   <script type="text/javascript" src="js/americaAPI.js"></script>
 
+  <!-- Input Handling -->
+  <script type="text/javascript" src="js/inputHandler.js"></script>
+
+
 </head>
 
 <body>
@@ -71,14 +75,11 @@
   <div class="container">
     <header>
       <h1 class="title" aria-label="Title">COVID-19 Tracker</h1>
-      <h2 class="subtitle" aria-label="subtitle">Everything you need to know about the Corona Virus in the United States.</h2>
+      <h2 class="subtitle" aria-label="subtitle">Everything you need to know about the Corona Virus in the United
+        States.</h2>
       <p>Last updated on :
         <!-- Replace it with the ServerTime later -->
         <span id="serverTime"></span>
-        <script>
-          let d = new Date();
-          document.getElementById("serverTime").innerHTML = d;
-        </script>
       </p>
     </header>
     <main>
@@ -112,7 +113,7 @@
             <input type="text" class="form-control" id="search" placeholder=" search for..." role="search"
               oninput="search();">
           </div>
-          <button type="button" aria-label="Refresh button">
+          <button type="button" id="searchButton" aria-label="Refresh button" onclick="loadData()">
             <i class="fas fa-sync-alt"></i>
             Refresh
           </button>
@@ -120,11 +121,6 @@
 
         <!-- Main Table -->
         <div class="table-container">
-          <script src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-          <script language="javascript">
-            _getData();
-          </script>
           <table id="tableStates">
             <tr>
               <th>STATE</th>
@@ -181,10 +177,10 @@
               </select>
             </div>
             <script src="./js/newsAPI.js"></script>
-            
+
             <div class="d-flex flex-wrap justify-content-around" id='news-container'>
               <script>
-                _getNews();
+                getNews();
               </script>
             </div>
           </div>

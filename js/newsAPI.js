@@ -1,6 +1,6 @@
 let selection = 'popularity'; // default selection choice
 
-function _newsApi() {
+function newsApi() {
     let encodedQuery = encodeURI('+(' + state + ')AND(CoronaVirus)OR(COVID-19)OR(PANDEMIC)OR(covid)');
     let encodedTitle = encodeURI('COVID')
     return fetch(`https://newsapi.org/v2/everything?q=${encodedQuery}&qInTitle=${encodedTitle}&pageSize=12&sortBy=${selection}&language=en&apiKey=c9b6c0a08f6e420e9673784123343f6d`)
@@ -8,12 +8,12 @@ function _newsApi() {
         .then(json => json)
         .catch(error => console.log('error', error));
 }
-  
-  // creates a table 
-async function _getNews() {
+
+// creates a table 
+async function getNews() {
     document.querySelector('#news-container').innerHTML = '';
 
-    let newsData = await _newsApi();
+    let newsData = await newsApi();
     if (newsData.articles.length > 0) {
         newsData.articles.forEach(article => {
 
@@ -32,14 +32,14 @@ async function _getNews() {
             if (article.url) {
                 newsLink.setAttribute('href', article.url);
             }
-            
+
             // Make the image
             if (article.urlToImage) {
                 newsImg.setAttribute('src', article.urlToImage);
                 newsImg.setAttribute('alt', article.title);
                 newsImg.setAttribute('title', article.title);
-            }            
-    
+            }
+
             // Make the title
             if (article.title) {
                 if (article.title.length > 100) { // shorten the article title
@@ -51,7 +51,7 @@ async function _getNews() {
             // Make the author
             if (article.source.name) {
                 newsAuthor.innerHTML = article.source.name;
-            } 
+            }
 
             card.appendChild(newsLink);
             newsLink.appendChild(newsImg);
@@ -66,5 +66,5 @@ async function _getNews() {
 let selectType = document.getElementById('control-news')
 selectType.addEventListener('change', () => {
     selection = selectType.value;
-    _getNews();
+    getNews();
 });

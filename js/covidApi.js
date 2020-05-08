@@ -1,13 +1,13 @@
-
+'use strict';
 let requestOptions = {
   method: 'GET',
   redirect: 'follow'
 };
 
-let tableData = [];
+// let tableData = [];
 
 // why return must be included here? async and promise textbook check 
-function _callApi() {
+function callApi() {
   return fetch("https://covidtracking.com/api/states/daily", requestOptions)
     .then(response => response.json())
     .then(json => json)
@@ -15,8 +15,10 @@ function _callApi() {
 }
 
 // creates a table 
-async function _getData() {
-  const data = await _callApi();
+async function getData() {
+  document.getElementById("tableStates").innerHTML = "";
+
+  const data = await callApi();
 
   // for iterating and adding to the temp array "temp" to table id="tableStates" 
   // backlash for readablility 
@@ -41,7 +43,7 @@ async function _getData() {
       temp += "<td>" + numberWithCommas(data[i].negative) + "</td>";
       temp += "<td>" + numberWithCommas(data[i].death) + "</td>";
       temp += "<td>" + numberWithCommas(data[i].recovered) + "</td></a></tr>";
-      tableData.push(data[i].state);
+      // tableData.push(data[i].state);
     }
   }
 

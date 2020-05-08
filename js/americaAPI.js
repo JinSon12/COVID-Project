@@ -1,20 +1,43 @@
-window.onload = function() {
-    this._getAmerica();
+'use strict';
+
+window.onload = function () {
+    this.loadData();
 }
 
+function loadData() {
+    document.getElementById("serverTime").innerHTML = "";
+    getAmerica();
+    getData();
 
-function _americaApi() {
+    // updating the date and checking that the refresh button is working 
+    console.log("fetched data");
+    let d = new Date();
+    setTimeout(function () { document.getElementById("serverTime").innerHTML = d; 900 });
+}
+
+function americaApi() {
     return fetch("https://covidtracking.com/api/us", requestOptions)
-      .then(response => response.json())
-      .then(json => json)
-      .catch(error => console.log('error', error));
+        .then(response => response.json())
+        .then(json => json)
+        .catch(error => console.log('error', error));
 }
 
-async function _getAmerica() {
-    let americaData = await _americaApi();
-    document.getElementById('usa1').innerHTML = numberWithCommas(americaData[0].positive);
-    document.getElementById('usa2').innerHTML = numberWithCommas(americaData[0].death);
-    document.getElementById('usa3').innerHTML = numberWithCommas(americaData[0].recovered);
+async function getAmerica() {
+    let usa1 = document.getElementById('usa1');
+    let usa2 = document.getElementById('usa2');
+    let usa3 = document.getElementById('usa3');
+
+    // remove the values of the elements 
+    usa1.innerHTML = "";
+    usa2.innerHTML = "";
+    usa3.innerHTML = "";
+
+    let americaData = await americaApi();
+
+    // populate the elements with values 
+    usa1.innerHTML = numberWithCommas(americaData[0].positive);
+    usa2.innerHTML = numberWithCommas(americaData[0].death);
+    usa3.innerHTML = numberWithCommas(americaData[0].recovered);
 }
 
 function numberWithCommas(x) {

@@ -78,6 +78,16 @@ h3 {
   font-size: 16vw;
 }
 
+#serverTime {
+  animation: blinker 1s step-start;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 /* TABLE */
 .table-area {
   display: flex;
