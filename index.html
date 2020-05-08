@@ -35,8 +35,9 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
     integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-  <!-- Main Covid API tracker -->
+  <!-- Main Covid API trackers -->
   <script type="text/javascript" src="js/covidApi.js"></script>
+  <script type="text/javascript" src="js/americaAPI.js"></script>
 
 </head>
 
@@ -70,8 +71,7 @@
   <div class="container">
     <header>
       <h1 class="title" aria-label="Title">COVID-19 Tracker</h1>
-      <h2 class="subtitle" aria-label="subtitle">Everything you need to know about the Corona Virus in the United
-        States.</h2>
+      <h2 class="subtitle" aria-label="subtitle">Everything you need to know about the Corona Virus in the United States.</h2>
       <p>Last updated on :
         <!-- Replace it with the ServerTime later -->
         <span id="serverTime"></span>
@@ -87,15 +87,15 @@
         <div class="row">
           <div class="col-md-6 col-lg-4 stat" aria-label="Cases">
             <h2>Cases</h2>
-            <h3>845,822</h3>
+            <h3 id='usa1'></h3>
           </div>
           <div class="col-md-6 col-lg-4 stat" aria-label="Deaths">
             <h2>Deaths</h2>
-            <h3>47,479</h3>
+            <h3 id='usa2'></h3>
           </div>
           <div class="col-md-6 col-lg-4 stat" aria-label="Recoveries">
             <h2>Recoveries</h2>
-            <h3>83,917</h3>
+            <h3 id='usa3'></h3>
           </div>
         </div>
       </div>

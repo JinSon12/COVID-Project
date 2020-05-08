@@ -1,8 +1,9 @@
 let selection = 'popularity'; // default selection choice
 
 function _newsApi() {
-    let encoded = encodeURI('' + state + '+COVID-19+CoronaVirus');
-    return fetch(`https://newsapi.org/v2/everything?q=${encoded}&pageSize=12&sortBy=${selection}&apiKey=c9b6c0a08f6e420e9673784123343f6d`)
+    let encodedQuery = encodeURI('+(' + state + ')AND(CoronaVirus)OR(COVID-19)OR(PANDEMIC)OR(covid)');
+    let encodedTitle = encodeURI('COVID')
+    return fetch(`https://newsapi.org/v2/everything?q=${encodedQuery}&qInTitle=${encodedTitle}&pageSize=12&sortBy=${selection}&language=en&apiKey=c9b6c0a08f6e420e9673784123343f6d`)
         .then(response => response.json())
         .then(json => json)
         .catch(error => console.log('error', error));
@@ -22,7 +23,7 @@ async function _getNews() {
             let newsLink = document.createElement('a');
             newsLink.setAttribute('href', '#');
             let newsImg = document.createElement('img');
-            newsImg.setAttribute('src', '');
+            newsImg.setAttribute('src', '../img/white.png');
             let newsTitle = document.createElement('h6');
             let newsAuthor = document.createElement('p');
 
