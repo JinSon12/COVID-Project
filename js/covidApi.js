@@ -38,11 +38,11 @@ async function _getData() {
       let stateName = stateCodes[data[i].state];
       temp += "<tr onclick=location.href=\'#state-container\'\;chooseState(\'" + data[i].state + "\')>";
       temp += "<td>" + stateName + "</td>";
-      temp += "<td>" + data[i].totalTestResults + "</td>";
-      temp += "<td>" + data[i].positive + "</td>";
-      temp += "<td>" + data[i].negative + "</td>";
-      temp += "<td>" + data[i].death + "</td>";
-      temp += "<td>" + data[i].recovered + "</td></a></tr>";
+      temp += "<td>" + numberWithCommas(data[i].totalTestResults) + "</td>";
+      temp += "<td>" + numberWithCommas(data[i].positive) + "</td>";
+      temp += "<td>" + numberWithCommas(data[i].negative) + "</td>";
+      temp += "<td>" + numberWithCommas(data[i].death) + "</td>";
+      temp += "<td>" + numberWithCommas(data[i].recovered) + "</td></a></tr>";
       tableData.push(data[i].state);
     }
   }
