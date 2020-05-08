@@ -1,5 +1,3 @@
-//TD : get api using jQuery 
-
 
 let requestOptions = {
   method: 'GET',
@@ -52,12 +50,12 @@ async function _getData() {
 
 // search function 
 function search() {
-  let inputval = document.getElementById("search").value.toUpperCase();
+  let inputval = document.getElementById("search").value.toLowerCase();
   let table = document.getElementById("tableStates");
   let tableRow = table.getElementsByTagName("tr");
 
   for (let i = 1; i < tableRow.length; i++) {
-    let tdata = tableRow[i].cells[0].innerHTML;
+    let tdata = tableRow[i].cells[0].textContent.toLowerCase();
     if (tdata.includes(inputval)) {
       tableRow[i].style.display = "";
     } else {
