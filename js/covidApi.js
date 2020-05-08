@@ -18,9 +18,7 @@ function _callApi() {
 
 // creates a table 
 async function _getData() {
-  console.log("getData async function");
   const data = await _callApi();
-  console.log("called API");
 
   // for iterating and adding to the temp array "temp" to table id="tableStates" 
   // backlash for readablility 
@@ -35,7 +33,6 @@ async function _getData() {
   </tr>";
 
   if (data.length > 0) {
-    //chooseState(\'" + data[i].state + "\')
     let maxnum = 56;
     for (let i = 0; i < maxnum; i++) {
       let stateName = stateCodes[data[i].state];

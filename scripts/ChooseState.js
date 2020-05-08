@@ -70,8 +70,8 @@ function chooseState(abbrev) {
     drawLineChart();
     drawLineChart2();
 
-    // finds state-specific videos
-    getVideos();
+    // finds state-specific news
+    _getNews();
 }
 
 function getAbbrev() {

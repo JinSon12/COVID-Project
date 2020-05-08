@@ -19,9 +19,8 @@
   <script type="text/javascript" src="scripts/LineChartDeaths.js"></script>
   <script type="text/javascript" src="scripts/LineChartCases.js"></script>
 
-  <!-- Choose State and Youtube API calls -->
+  <!-- Choose State and News API calls -->
   <script src="./scripts/ChooseState.js"></script>
-  <script src="./js/youtubeAPI.js"></script>
   <!-- <script src="https://apis.google.com/js/api.js"></script> -->
 
   <!-- Bootstrap/CSS -->
@@ -173,22 +172,21 @@
           <div class="news" aria-label="News for COIVD for the state" role="news for the state">
             <h4 id='state-affairs'>Alaska Current Affairs</h4>
             <div class="d-flex h-100 justify-content-end flex-wrap mb-5">
+
               <!-- State-News Input Control -->
-              <label class="mr-2 my-auto" for="numvid">Number of Videos to Display</label>
-              <select class="form-control col-1" id="numvid">
-                <option>select</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
+              <label class="mr-2 my-auto" for="numnews">Search by: </label>
+              <select class="form-control col-3" id="control-news">
+                <option value="popularity">Most Relevant</option>
+                <option value="publishedAt">Most Recent</option>
               </select>
             </div>
+            <script src="./js/newsAPI.js"></script>
             
-           State News YouTube
-          <div class="d-flex flex-wrap justify-content-around" id='video-container'>
-            
-          </div>
+            <div class="d-flex flex-wrap justify-content-around" id='news-container'>
+              <script>
+                _getNews();
+              </script>
+            </div>
           </div>
         </div>
     </main>
@@ -201,6 +199,7 @@
   <footer>
     <div class="footer-container">
       <p>Created by <br> Jin Son &amp; Kyle Kusche <br> 2020 &copy;</p>
+      <p class="footer-news-api">Powered by <a href="https://newsapi.org/">News API</a></p>
     </div>
   </footer>
 
