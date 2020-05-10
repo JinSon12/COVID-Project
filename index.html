@@ -16,7 +16,6 @@
 
   <!-- Line charts -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript" src="scripts/LineChartDeaths.js"></script>
   <script type="text/javascript" src="scripts/LineChartCases.js"></script>
 
   <!-- Choose State and News API calls -->
@@ -142,6 +141,10 @@
           <div class="charts mb-5">
             <div class="line-chart" id="line-chart-cases" role="Line Chart for cases of COVID in the state"></div>
             <div class="line-chart" id="line-chart-deaths" role="Line Chart for deaths of COVID in the state"></div>
+            <script>
+              _drawChart('Cases');
+              _drawChart('Deaths');
+            </script>
           </div>
 
           <!-- Slider (input for the chart) -->
@@ -152,7 +155,7 @@
               </label>
             </div>
             <div class="row mt-3"><input type="range" class="custom-range" min="0" max="25" id="chart-slider"
-                onchange="drawLineChart(); drawLineChart2()">
+                onchange="_drawChart('Cases'); _drawChart('Deaths')">
             </div>
             <div class="row justify-content-between">
               <div class="col col-2 p-0">

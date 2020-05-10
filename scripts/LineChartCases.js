@@ -1,5 +1,4 @@
 google.charts.load('current', { packages: ['line'] });
-google.charts.setOnLoadCallback(drawLineChart);
 
 function getRange() {
     let value = document.getElementById('chart-slider').value;
@@ -7,82 +6,91 @@ function getRange() {
     return range;
 }
 
-function drawLineChart() {
-    $.ajax({
-        url: 'https://covidtracking.com/api/states/daily',
-        dataType: 'json',
-        type: 'GET',
-        contentType: 'application/json; charset=utf-8',
-        success: function (data) {
-            var arrCases = [['Date', 'Cases']]; // assign column names
+function _dailyAPI() {
+  return fetch('https://covidtracking.com/api/states/daily')
+    .then(response => response.json())
+    .then(json => json)
+    .catch(error => console.log('error', error));
+}
 
-            for (let i = getRange(); i >= 0; i--) {   // User value represents chart range
-                if (data[i].state == getAbbrev()) {   // User value represents state info
-                    let date = data[i].date.toString();
-                    let newDate = date.substring(4,6) + '-' + date.substring(6, 9);
-                    arrCases.push([newDate, data[i].total]);
-                }
-            }
+async function _drawChart(type) {
+    let data = await _dailyAPI();
+    
+    var arrCases = [['Date', type]]; // assign column names
 
-            let chartWidth;
-            if (window.innerWidth <= 600) {
-                chartWidth = 350;
-            } else {
-                chartWidth = 500;
-            }
+    for (let i = getRange(); i >= 0; i--) {   // User value represents chart range
+      if (data[i].state == getAbbrev()) {   // User value represents state info
+          let date = data[i].date.toString();
+          let newDate = date.substring(4,6) + '-' + date.substring(6, 9);
+          if (type == 'Cases') {
+            arrCases.push([newDate, data[i].total]);
+          } else {
+            arrCases.push([newDate, data[i].death]);
+          }
+      }
+    }
 
-            var options = {
-                hAxis: {
-                  title: 'Date',
-                  textStyle: {
-                    color: '#333333',
-                    fontSize: 12,
-                    fontName: 'Arial',
-                    bold: true,
-                  },
-                  titleTextStyle: {
-                    color: '#333333',
-                    fontSize: 20,
-                    bold: true,
-                    italic: false
-                  }
-                },
-                vAxis: {
-                  title: 'Total Cases',
-                  textStyle: {
-                    color: '#333333',
-                    fontSize: 12,
-                    fontName: 'Arial',
-                    bold: true,
-                  },
-                  titleTextStyle: {
-                      color: '#333333',
-                      fontSize: 20,
-                      bold: true,
-                      italic: false,
-                  }
-                },
-                legend: {
-                    position: 'none'
-                },
-                colors: ['royalblue'], 
-                backgroundColor: 'white',
-                'width':chartWidth,
-                'height':300
-              };
+    let chartWidth;
+    if (window.innerWidth <= 600) {
+      chartWidth = 350;
+    } else {
+        chartWidth = 500;
+    }
+
+    let chartColor;
+    if (type == 'Cases') {
+      chartColor = 'royalblue';
+    } else {
+      chartColor = '#d6392d'
+    }
 
 
-            // Create DataTable and add the array to it.
-            var figures = google.visualization.arrayToDataTable(arrCases);
-
-            // Define the chart type (LineChart) and the container (a DIV in our case).
-            var chart = new google.charts.Line(document.getElementById('line-chart-cases'));
-
-            // Draw the chart with Options.
-            chart.draw(figures, google.charts.Line.convertOptions(options));
+    var options = {
+      hAxis: {
+        title: 'Date',
+        textStyle: {
+          color: '#333333',
+          fontSize: 12,
+          fontName: 'Arial',
+          bold: true,
         },
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert('Got an Error');
+        titleTextStyle: {
+          color: '#333333',
+          fontSize: 20,
+          bold: true,
+          italic: false
         }
-    });
+      },
+      vAxis: {
+        title: 'Total ' + type,
+        textStyle: {
+          color: '#333333',
+          fontSize: 12,
+          fontName: 'Arial',
+          bold: true,
+        },
+        titleTextStyle: {
+            color: '#333333',
+            fontSize: 20,
+            bold: true,
+            italic: false,
+        }
+      },
+      legend: {
+          position: 'none'
+      },
+      colors: [chartColor], 
+      backgroundColor: 'white',
+      'width':chartWidth,
+      'height':300
+    };
+
+    // Create DataTable and add the array to it.
+    var figures = google.visualization.arrayToDataTable(arrCases);
+
+    // Define the chart type (LineChart) and the container (a DIV in our case).
+    var chart = new google.charts.Line(document.getElementById('line-chart-' + type.toLowerCase()));
+
+    // Draw the chart with Options.
+    chart.draw(figures, google.charts.Line.convertOptions(options));
 }
