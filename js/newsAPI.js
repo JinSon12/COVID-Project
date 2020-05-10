@@ -1,9 +1,10 @@
 let selection = 'popularity'; // default selection choice
 
-function newsApi() {
-    let encodedQuery = encodeURI('+(' + state + ')AND(CoronaVirus)OR(COVID-19)OR(PANDEMIC)OR(covid)');
-    let encodedTitle = encodeURI('COVID')
-    return fetch(`https://newsapi.org/v2/everything?q=${encodedQuery}&qInTitle=${encodedTitle}&pageSize=12&sortBy=${selection}&language=en&apiKey=c9b6c0a08f6e420e9673784123343f6d`)
+function _newsApi() {
+    let encoded = encodeURI(state + '+ COVID-19 + CoronaVirus + PANDEMIC');
+    let encodedTitle = encodeURI(state + '+ (COVID-19 OR CORONAVIRUS OR PANDEMIC)');
+    let excludeDomains = 'lifehacker.com, gizmodo.com'
+    return fetch(`https://newsapi.org/v2/everything?q=${encoded}&qInTitle=${encodedTitle}&pageSize=12&sortBy=${selection}&excludeDomains=${excludeDomains}&apiKey=c9b6c0a08f6e420e9673784123343f6d`)
         .then(response => response.json())
         .then(json => json)
         .catch(error => console.log('error', error));
@@ -13,7 +14,7 @@ function newsApi() {
 async function getNews() {
     document.querySelector('#news-container').innerHTML = '';
 
-    let newsData = await newsApi();
+    let newsData = await _newsApi();
     if (newsData.articles.length > 0) {
         newsData.articles.forEach(article => {
 

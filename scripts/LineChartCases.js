@@ -13,7 +13,7 @@ function _dailyAPI() {
     .catch(error => console.log('error', error));
 }
 
-async function _drawChart(type) {
+async function drawChart(type) {
     let data = await _dailyAPI();
     
     var arrCases = [['Date', type]]; // assign column names

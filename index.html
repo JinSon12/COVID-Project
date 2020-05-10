@@ -20,7 +20,6 @@
 
   <!-- Choose State and News API calls -->
   <script src="./scripts/ChooseState.js"></script>
-  <!-- <script src="https://apis.google.com/js/api.js"></script> -->
 
   <!-- Bootstrap/CSS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
@@ -40,8 +39,6 @@
 
   <!-- Input Handling -->
   <script type="text/javascript" src="js/inputHandler.js"></script>
-
-
 </head>
 
 <body>
@@ -142,8 +139,10 @@
             <div class="line-chart" id="line-chart-cases" role="Line Chart for cases of COVID in the state"></div>
             <div class="line-chart" id="line-chart-deaths" role="Line Chart for deaths of COVID in the state"></div>
             <script>
-              _drawChart('Cases');
-              _drawChart('Deaths');
+              setTimeout(() => {
+                drawChart('Cases');
+                drawChart('Deaths');
+              }, 300);
             </script>
           </div>
 
