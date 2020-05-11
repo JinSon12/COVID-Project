@@ -9,9 +9,6 @@ function loadData() {
     document.getElementById("serverTime").innerHTML = "";
     getAmerica();
     getData();
-
-    // updating the date and checking that the refresh button is working 
-    console.log("fetched data");
     let d = new Date();
     setTimeout(function () { document.getElementById("serverTime").innerHTML = d; 900 });
 }
@@ -20,7 +17,7 @@ function americaApi() {
     return fetch("https://covidtracking.com/api/us", requestOptions)
         .then(response => response.json())
         .then(json => json)
-        .catch(error => console.log('error', error));
+        .catch(renderError)
 }
 
 async function getAmerica() {

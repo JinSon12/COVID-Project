@@ -6,14 +6,14 @@ function newsApi() {
     return fetch(`https://newsapi.org/v2/everything?q=${encodedQuery}&qInTitle=${encodedTitle}&pageSize=12&sortBy=${selection}&language=en&apiKey=c9b6c0a08f6e420e9673784123343f6d`)
         .then(response => response.json())
         .then(json => json)
-        .catch(error => console.log('error', error));
+        .catch(renderError);
 }
 
 // creates a table 
 async function getNews() {
     document.querySelector('#news-container').innerHTML = '';
 
-    let newsData = await newsApi();
+    let newsData = await newsApi()
     if (newsData.articles.length > 0) {
         newsData.articles.forEach(article => {
 

@@ -11,42 +11,40 @@ function callApi() {
   return fetch("https://covidtracking.com/api/states/daily", requestOptions)
     .then(response => response.json())
     .then(json => json)
-    .catch(error => console.log('error', error));
+    .catch(renderError)
 }
+
 
 // gets data from API and creates a table
 async function getData() {
   data = await callApi();
+
   data = data.slice(0, 56);
   console.log(data);
   createTable(data);
   return data;
 }
 
+
 function renderError(err) {
-  let recordDiv = document.getElementById("records");
+  let error = document.querySelector(".error");
+  console.log(err.message);
   let errorP = document.createElement("P");
   errorP.classList.add("alert", "alert-danger");
   errorP.innerHTML = err.message;
-  recordDiv.appendChild(errorP);
+  error.appendChild(errorP);
+}
+
+function updateTime() {
+  let d = new Date();
+  setTimeout(function () { document.getElementById("serverTime").innerHTML = d; 900 });
 }
 
 function createTable(data) {
   document.getElementById("tbody").innerHTML = "";
-  // for iterating and adding to the temp array "temp" to table id="tableStates" 
+  // for iterating and adding to the temp array "temp" to table id="tbody" 
   // backlash for readablility 
   let temp = [];
-  //   "\
-  //  <tr> \
-  //  <th class=\"table-state\">STATE</th> \
-  //  <th class=\"data\" id=\"totresult\">Total <br> Test Results</th> \
-  //  <th class=\"data\" id=\"pos\">POSITIVE</th> \
-  //  <th class=\"data\" id=\"neg\">NEGATIVE</th> \
-  //  <th class=\"data\" id=\"deaths\">DEATHS</th> \
-  //  <th class=\"data\" id=\"recov\">RECOVERED</th> \
-  //  <th class=\"data\" id=\"dpratio\">DEATHS <br> / POSITIVE</th> \
-  //  </tr>";
-
   if (data.length > 0) {
     let maxnum = 56;
     temp += "<tbody id=\"added-data\">";
@@ -83,10 +81,10 @@ function search() {
   }
 }
 
+
 // sorting function
 // initial value of the sort = desc
 let order = "desc";
-
 function sortTable(value) {
   let copiedData = data.slice(0);
 
