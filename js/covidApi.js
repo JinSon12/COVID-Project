@@ -20,7 +20,6 @@ async function getData() {
   data = await callApi();
 
   data = data.slice(0, 56);
-  console.log(data);
   createTable(data);
   return data;
 }
