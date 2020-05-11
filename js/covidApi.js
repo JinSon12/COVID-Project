@@ -24,7 +24,7 @@ async function getData() {
 
 
 function createTable(data) {
-
+  document.getElementById("tbody").innerHTML = "";
   // for iterating and adding to the temp array "temp" to table id="tableStates" 
   // backlash for readablility 
   let temp = [];
@@ -74,9 +74,6 @@ function search() {
     }
   }
 }
-
-// console.log(data);
-
 
 // sorting function
 // initial value of the sort = desc

@@ -20,14 +20,6 @@ function addEListners() {
   rec.addEventListener("click", () => { sortTable("recovered") });
 }
 
-// // for table sorting 
-
-// // let positive = document.querySelector("#pos");
-// // positive.addEventListener("click", tblBtnListener);
-// console.log("sorted by pos");
-
-
-
 function tblBtnListener() {
   console.log(e);
   if (e.target.id === "pos") sortTable("positive"); console.log("clicked");
