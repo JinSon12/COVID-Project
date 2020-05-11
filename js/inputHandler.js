@@ -20,9 +20,5 @@ function addEListners() {
   rec.addEventListener("click", () => { sortTable("recovered") });
 }
 
-function tblBtnListener() {
-  console.log(e);
-  if (e.target.id === "pos") sortTable("positive"); console.log("clicked");
-}
 
 
