@@ -10,12 +10,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Covid-19 Tracker</title>
 
+  <!-- AJAX & Polyfill -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
 
-  <!-- Line chart -->
+  <!-- Line charts -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript" src="scripts/LineChart.js"></script>
-  <script type="text/javascript" src="scripts/LineChartDeaths.js"></script>
+  <script type="text/javascript" src="scripts/LineChartCases.js"></script>
+
+  <!-- Choose State and News API calls -->
+  <script src="./scripts/ChooseState.js"></script>
 
   <!-- Bootstrap/CSS -->
   <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
@@ -29,6 +33,12 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
     integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
+  <!-- Main Covid API trackers -->
+  <script type="text/javascript" src="js/covidApi.js"></script>
+  <script type="text/javascript" src="js/americaAPI.js"></script>
+
+  <!-- Input Handling -->
+  <script type="text/javascript" src="js/inputHandler.js"></script>
 </head>
 
 <body>
@@ -66,10 +76,6 @@
       <p>Last updated on :
         <!-- Replace it with the ServerTime later -->
         <span id="serverTime"></span>
-        <script>
-          let d = new Date();
-          document.getElementById("serverTime").innerHTML = d;
-        </script>
       </p>
     </header>
     <main>
@@ -78,19 +84,22 @@
         <div class="row">
           <div class="col-md-6 col-lg-4 stat" aria-label="Cases">
             <h2>Cases</h2>
-            <h3>845,822</h3>
+            <h3 id="usa1"> </h3>
           </div>
           <div class="col-md-6 col-lg-4 stat" aria-label="Deaths">
             <h2>Deaths</h2>
-            <h3>47,479</h3>
+            <h3 id="usa2"></h3>
           </div>
           <div class="col-md-6 col-lg-4 stat" aria-label="Recoveries">
             <h2>Recoveries</h2>
-            <h3>83,917</h3>
+            <h3 id="usa3"></h3>
           </div>
         </div>
       </div>
       <hr>
+
+      <div class="error">
+      </div>
 
       <!-- Table -->
       <div class="table-area">
@@ -100,9 +109,10 @@
             <img
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAACqUlEQVRoge2ZQWjTUBjH/19asDsrDgZNuu3oWVSEzRXcHG5FPIgIIogMO0QUETxW9CQDRTCpZQfBg+BABEVEXBI8dOouHkQQGbLupJsguNGNtvm8WEgl6/LSNEtHfreXfN/3/n94L+97LRARLsg+OJJd/EjA/u0SIwZ/MLTUwfpIsr/qHBMAQAfsI2mzsE5jpxqh99sjwwuNWhuMcC0+DuBLoHo8QMA3qVI9YX/WYMQs9KwQS8MAvgeqTIwlSLWjs9N9P+wPySkyPVHq5xi/A9ATiDT3/ARqA4bW9/X/F46bXS/IC8w0AuBX26W55zeTNeJkAmjy1TLz8meJaBTAn7ZJc88aER831d5PmwU0/fzOqvI8ER8DsOa7NPeUma0xXU0VmwVteY7oaqpIRCcBbPgmzT0VZpwy873mVoGuDkRdld+A+AyAWqvKBLCI6JyZV166CXZ9shtq6hkTXQDAnqW5h5kxqavyE7cJQi2KqcqPwLgirksQwg0zrzwUSRHutYy8cp9Bt0XzXEN0y1CVO8JpXudLT5ammPma13xn6IGhyZe8ZHrufnU1eZ2Aaa/5Djwe7E5e9prcQhtPvHtFvgjCU+81/lUCP+du+XwuR5bXGi3dR2ZmqLZnefUsCK9aKPN2V7xy2sxRtRUtnveInUNXl7oSZes1CAMieUyYA7qGTXXvaqsafLkhzt1NlmNWNcOAIZBWjFero36YiAgjvuyROkPZRaH2xdAU3+bfqb+idC6RkbARGQkbkZGwERkJG5GRsBEZCRu+GmFg3s96IvhqZCMhDRLhJoB1P+u6wdeLVZ30RKkfMb7HwFizuNBfrPSCvKBryjgRMgjo/8i2bnZdVV6sJ6R9QSy3tiwtJ5yWm59LKzAjdYaypQyBpxhYNjTlcNDzRwTFXwCnvqDlgTStAAAAAElFTkSuQmCC"
               alt=" " class="filter-icon">
-            <input type="text" class="form-control" placeholder=" search for..." role="search">
+            <input type="text" class="form-control" id="search" placeholder=" search for..." role="search"
+              oninput="search();">
           </div>
-          <button type="button" aria-label="Refresh button">
+          <button type="button" id="searchButton" aria-label="Refresh button" onclick="loadData();">
             <i class="fas fa-sync-alt"></i>
             Refresh
           </button>
@@ -110,75 +120,29 @@
 
         <!-- Main Table -->
         <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>&nbsp;</th>
-                <th>Cases</th>
-                <th>Positive</th>
-                <th>Negative</th>
-                <th>Pos/Neg</th>
-                <th>Recoveries</th>
-                <th>Deaths</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><a class="state" href="#">Alabama</a></td>
-                <td>48760</td>
-                <td>5465</td>
-                <td>43295</td>
-                <td>0.03</td>
-                <td>196</td>
-                <td>194</td>
-              </tr>
-              <tr>
-                <td><a class="state" href="#">Arkansas</a></td>
-                <td>29713</td>
-                <td>2276</td>
-                <td>27437</td>
-                <td>0.13</td>
-                <td>N/A</td>
-                <td>42</td>
-              </tr>
-              <tr>
-                <td><a class="state" href="#">Arizona</a></td>
-                <td>56601</td>
-                <td>5459</td>
-                <td>51142</td>
-                <td>0.08</td>
-                <td>863</td>
-                <td>229</td>
-              </tr>
-              <tr>
-                <td><a class="state" href="#">California</a></td>
-                <td>465327</td>
-                <td>35396</td>
-                <td>429931</td>
-                <td>0.08</td>
-                <td>N/A</td>
-                <td>1354</td>
-              </tr>
-              <tr>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-              </tr>
+          <table id="tableStates">
+            <tr>
+              <th id="state">STATE</th>
+              <th class="data select" id="total">
+                Total Test Results<i class="fas fa-sort"></i>
+              </th>
+              <th class="data select" id="pos">POSITIVE <i class="fas fa-sort"></i></th>
+              <th class="data select" id="neg">NEGATIVE<i class="fas fa-sort"></i></th>
+              <th class="data select" id="death">DEATHS<i class="fas fa-sort"></i></th>
+              <th class="data select" id="rec">RECOVERED<i class="fas fa-sort"></i></th>
+              <th class="data" id="dpratio">DEATHS <br> POSITIVE</th>
+            </tr>
+            <tbody id="tbody">
             </tbody>
           </table>
         </div>
       </div>
 
-
-      <hr>
+      <hr id="state-container">
 
       <!-- State-Wide Information -->
       <div class="state-container">
-        <h4>Alabama Trends</h4>
+        <h4 id="state-name">Alaska Trends</h4>
 
         <div class="charts mb-5">
           <div class="line-chart" id="line-chart-cases" role="Line Chart for cases of COVID in the state"></div>
@@ -189,59 +153,40 @@
         <div class="container chart-slider col-xl-4 col-md-6 col-sm-10 mt-5">
           <div class="row justify-content-center">
             <label for="chart-slider">Select the Range of Date for the
-              Chart
+              Charts
             </label>
           </div>
-          <div class="row mt-3"><input type="range" class="custom-range" min="0" max="5" id="chart-slider">
+          <div class="row mt-3"><input type="range" class="custom-range" min="0" max="25" id="chart-slider"
+              onchange="drawChart('Cases'); drawChart('Deaths')">
           </div>
           <div class="row justify-content-between">
             <div class="col col-2 p-0">
-              <p>10 days before</p>
+              <p>30 days before</p>
             </div>
             <div class="col col-2 p-0 text-right">
-              <p>1 day before</p>
+              <p>5 days before</p>
             </div>
           </div>
         </div>
 
         <!-- State-News -->
         <div class="news" aria-label="News for COIVD for the state" role="news for the state">
-          <h4>Alabama Current Affairs</h4>
+          <h4 id="state-affairs">Alaska Current Affairs</h4>
           <div class="d-flex h-100 justify-content-end flex-wrap mb-5">
+
             <!-- State-News Input Control -->
-            <label class="mr-2 my-auto" for="numvid">Number of Videos to Display</label>
-            <select class="form-control col-1" id="numvid">
-              <option>select</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
+            <label class="mr-2 my-auto" for="control-news">Search by: </label>
+            <select class="form-control col-3" id="control-news">
+              <option value="popularity">Most Relevant</option>
+              <option value="publishedAt">Most Recent</option>
             </select>
           </div>
+          <script src="./js/newsAPI.js"></script>
 
-          <!-- State News YouTube -->
-          <div class="d-flex flex-wrap justify-content-around">
-            <div class="col-auto mb-4 ">
-              <iframe src="https://www.youtube.com/embed/-EifJlGP4D4"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                aria-label="Video 1"></iframe>
-            </div>
-            <div class="col-auto mb-4">
-              <iframe src="https://www.youtube.com/embed/L-becUZm7Ww"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                aria-label="Video 2"></iframe>
-            </div>
-            <div class="col-auto mb-4">
-              <iframe src="https://www.youtube.com/embed/6zhhirGRpw0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                aria-label="Video 3"></iframe>
-            </div>
-            <div class="col-auto mb-4">
-              <iframe src="https://www.youtube.com/embed/p_1qNbsFTGE"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                aria-label="Video 4"></iframe>
-            </div>
+          <div class="d-flex flex-wrap justify-content-around" id="news-container">
+            <script>
+              getNews();
+            </script>
           </div>
         </div>
       </div>
@@ -249,12 +194,16 @@
   </div>
 
 
-
-
   <!-- FOOTER -->
   <footer>
     <div class="footer-container">
-      <p>Created by <br> Jin Son &amp; Kyle Kusche <br> 2020 &copy;</p>
+      <p>Created by <br> Jin Son &amp; Kyle Kusche <br> 2020 &copy;
+
+      </p>
+      <p class="footer-api">
+        Powered by <a href="https://newsapi.org/">News API</a><br>
+        Data provided by <a href="https://covidtracking.com">Covid Tracking Project</a>
+      </p>
     </div>
   </footer>
 

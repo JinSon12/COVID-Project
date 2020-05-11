@@ -2,7 +2,7 @@
   "name": "info340-project",
   "version": "1.0.0",
   "private": true,
-  "description": "",
+  "description": "* use clear indentation, spacing => for additional readability \r  * include comments to describe what the code does \r  * NO redundant code. (No empty div, no redundant css properties...)",
   "scripts": {
     "test": "jest"
   },
@@ -14,7 +14,7 @@
   },
   "eslintConfig": {
     "parserOptions": {
-      "ecmaVersion": 6
+      "ecmaVersion": 2018
     },
     "env": {
       "browser": true,
@@ -36,5 +36,14 @@
         "error"
       ]
     }
-  }
+  },
+  "main": "test.spec.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/info340a-sp20/project-1-JinSon12.git"
+  },
+  "bugs": {
+    "url": "https://github.com/info340a-sp20/project-1-JinSon12/issues"
+  },
+  "homepage": "https://github.com/info340a-sp20/project-1-JinSon12#readme"
 }
