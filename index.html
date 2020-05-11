@@ -88,15 +88,15 @@
         <div class="row">
           <div class="col-md-6 col-lg-4 stat" aria-label="Cases">
             <h2>Cases</h2>
-            <h3 id='usa1'></h3>
+            <h3 id="usa1"> </h3>
           </div>
           <div class="col-md-6 col-lg-4 stat" aria-label="Deaths">
             <h2>Deaths</h2>
-            <h3 id='usa2'></h3>
+            <h3 id="usa2"></h3>
           </div>
           <div class="col-md-6 col-lg-4 stat" aria-label="Recoveries">
             <h2>Recoveries</h2>
-            <h3 id='usa3'></h3>
+            <h3 id="usa3"></h3>
           </div>
         </div>
       </div>
@@ -124,81 +124,87 @@
           <table id="tableStates">
             <tr>
               <th id="state">STATE</th>
-              <th class="data" id="total">Total Test Results <i class="fas fa-sort"></i></th>
-              <th class="data" id="pos">POSITIVE <i class="fas fa-sort"></i></th>
-              <th class="data" id="neg">NEGATIVE<i class="fas fa-sort"></i></th>
-              <th class="data" id="death">DEATHS<i class="fas fa-sort"></i></th>
-              <th class="data" id="rec">RECOVERED<i class="fas fa-sort"></i></th>
+              <th class="data select" id="total">
+                Total Test Results<i class="fas fa-sort"></i>
+              </th>
+              <th class="data select" id="pos">POSITIVE <i class="fas fa-sort"></i></th>
+              <th class="data select" id="neg">NEGATIVE<i class="fas fa-sort"></i></th>
+              <th class="data select" id="death">DEATHS<i class="fas fa-sort"></i></th>
+              <th class="data select" id="rec">RECOVERED<i class="fas fa-sort"></i></th>
               <th class="data" id="dpratio">DEATHS <br> POSITIVE</th>
             </tr>
-            <tbody id=tbody>
+            <tbody id="tbody">
             </tbody>
           </table>
         </div>
+      </div>
 
-        <hr id="state-container">
+      <hr id="state-container">
 
-        <!-- State-Wide Information -->
-        <div class="state-container">
-          <h4 id="state-name">Alaska Trends</h4>
+      <!-- State-Wide Information -->
+      <div class="state-container">
+        <h4 id="state-name">Alaska Trends</h4>
 
-          <div class="charts mb-5">
-            <div class="line-chart" id="line-chart-cases" role="Line Chart for cases of COVID in the state"></div>
-            <div class="line-chart" id="line-chart-deaths" role="Line Chart for deaths of COVID in the state"></div>
+        <div class="charts mb-5">
+          <div class="line-chart" id="line-chart-cases" role="Line Chart for cases of COVID in the state"></div>
+          <div class="line-chart" id="line-chart-deaths" role="Line Chart for deaths of COVID in the state"></div>
+        </div>
+
+        <!-- Slider (input for the chart) -->
+        <div class="container chart-slider col-xl-4 col-md-6 col-sm-10 mt-5">
+          <div class="row justify-content-center">
+            <label for="chart-slider">Select the Range of Date for the
+              Charts
+            </label>
           </div>
-
-          <!-- Slider (input for the chart) -->
-          <div class="container chart-slider col-xl-4 col-md-6 col-sm-10 mt-5">
-            <div class="row justify-content-center">
-              <label for="chart-slider">Select the Range of Date for the
-                Charts
-              </label>
-            </div>
-            <div class="row mt-3"><input type="range" class="custom-range" min="0" max="25" id="chart-slider"
-                onchange="drawLineChart(); drawLineChart2()">
-            </div>
-            <div class="row justify-content-between">
-              <div class="col col-2 p-0">
-                <p>30 days before</p>
-              </div>
-              <div class="col col-2 p-0 text-right">
-                <p>5 days before</p>
-              </div>
-            </div>
+          <div class="row mt-3"><input type="range" class="custom-range" min="0" max="25" id="chart-slider"
+              onchange="drawLineChart(); drawLineChart2()">
           </div>
-
-          <!-- State-News -->
-          <div class="news" aria-label="News for COIVD for the state" role="news for the state">
-            <h4 id='state-affairs'>Alaska Current Affairs</h4>
-            <div class="d-flex h-100 justify-content-end flex-wrap mb-5">
-
-              <!-- State-News Input Control -->
-              <label class="mr-2 my-auto" for="numnews">Search by: </label>
-              <select class="form-control col-3" id="control-news">
-                <option value="popularity">Most Relevant</option>
-                <option value="publishedAt">Most Recent</option>
-              </select>
+          <div class="row justify-content-between">
+            <div class="col col-2 p-0">
+              <p>30 days before</p>
             </div>
-            <script src="./js/newsAPI.js"></script>
-
-            <div class="d-flex flex-wrap justify-content-around" id='news-container'>
-              <script>
-                getNews();
-              </script>
+            <div class="col col-2 p-0 text-right">
+              <p>5 days before</p>
             </div>
           </div>
         </div>
+
+        <!-- State-News -->
+        <div class="news" aria-label="News for COIVD for the state" role="news for the state">
+          <h4 id="state-affairs">Alaska Current Affairs</h4>
+          <div class="d-flex h-100 justify-content-end flex-wrap mb-5">
+
+            <!-- State-News Input Control -->
+            <label class="mr-2 my-auto" for="control-news">Search by: </label>
+            <select class="form-control col-3" id="control-news">
+              <option value="popularity">Most Relevant</option>
+              <option value="publishedAt">Most Recent</option>
+            </select>
+          </div>
+          <script src="./js/newsAPI.js"></script>
+
+          <div class="d-flex flex-wrap justify-content-around" id="news-container">
+            <script>
+              getNews();
+            </script>
+          </div>
+        </div>
+      </div>
     </main>
   </div>
-
-
 
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-container">
-      <p>Created by <br> Jin Son &amp; Kyle Kusche <br> 2020 &copy;</p>
-      <p class="footer-news-api">Powered by <a href="https://newsapi.org/">News API</a></p>
+      <p>Created by <br> Jin Son &amp; Kyle Kusche <br> 2020 &copy;
+
+      </p>
+      <p class="footer-api">
+        Powered by <a href="https://newsapi.org/">News API</a><br>
+        Data provided by <a href="https://covidtracking.com">Covid Tracking Project</a>
+      </p>
     </div>
   </footer>
 

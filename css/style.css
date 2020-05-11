@@ -114,6 +114,9 @@ h3 {
   padding-right: .2em;
 }
 
+.select:hover{
+  cursor: pointer;
+}
 .search {
   display: flex;
   align-items: center;
@@ -167,7 +170,8 @@ th, td {
   border-bottom: solid 1px #333333;
 }
 
-tr:hover {
+
+#tbody > tr:hover {
   cursor: pointer;
   background-color: #d1e3ff !important;
 }
@@ -428,9 +432,9 @@ h4 {
   align-items: center;
 }
 
-.footer-news-api {
+.footer-api {
   position: absolute;
-  font-size: .8em;
+  font-size: .5em;
   margin-top: 70px;
   margin-bottom: 0;
 }

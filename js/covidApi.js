@@ -1,4 +1,5 @@
 'use strict';
+
 let requestOptions = {
   method: 'GET',
   redirect: 'follow'
@@ -22,6 +23,13 @@ async function getData() {
   return data;
 }
 
+function renderError(err) {
+  let recordDiv = document.getElementById("records");
+  let errorP = document.createElement("P");
+  errorP.classList.add("alert", "alert-danger");
+  errorP.innerHTML = err.message;
+  recordDiv.appendChild(errorP);
+}
 
 function createTable(data) {
   document.getElementById("tbody").innerHTML = "";
