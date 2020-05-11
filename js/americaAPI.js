@@ -9,8 +9,7 @@ function loadData() {
     document.getElementById("serverTime").innerHTML = "";
     getAmerica();
     getData();
-    let d = new Date();
-    setTimeout(function () { document.getElementById("serverTime").innerHTML = d; 900 });
+    updateTime();
 }
 
 function americaApi() {

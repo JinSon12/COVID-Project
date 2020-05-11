@@ -26,6 +26,7 @@ async function getData() {
 }
 
 
+// gets the err from callApi() and renders it on screen above the table 
 function renderError(err) {
   let error = document.querySelector(".error");
   console.log(err.message);
@@ -35,15 +36,17 @@ function renderError(err) {
   error.appendChild(errorP);
 }
 
+
+// updates the time
 function updateTime() {
   let d = new Date();
   setTimeout(function () { document.getElementById("serverTime").innerHTML = d; 900 });
 }
 
+
+// creates table using the data fetched by the API 
 function createTable(data) {
   document.getElementById("tbody").innerHTML = "";
-  // for iterating and adding to the temp array "temp" to table id="tbody" 
-  // backlash for readablility 
   let temp = [];
   if (data.length > 0) {
     let maxnum = 56;
