@@ -16,12 +16,10 @@
 
   <!-- Line charts -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript" src="scripts/LineChartDeaths.js"></script>
   <script type="text/javascript" src="scripts/LineChartCases.js"></script>
 
   <!-- Choose State and News API calls -->
   <script src="./scripts/ChooseState.js"></script>
-  <!-- <script src="https://apis.google.com/js/api.js"></script> -->
 
   <!-- Bootstrap/CSS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
@@ -41,8 +39,6 @@
 
   <!-- Input Handling -->
   <script type="text/javascript" src="js/inputHandler.js"></script>
-
-
 </head>
 
 <body>
@@ -160,8 +156,8 @@
               Charts
             </label>
           </div>
-          <div class="row mt-3"><input type="range" class="custom-range" min="0" max="25" id="chart-slider"
-              onchange="drawLineChart(); drawLineChart2()">
+          <div class="row mt-3"><input type="range" class="custom-range" min="1" max="30" id="chart-slider"
+              onchange="drawChart('Cases'); drawChart('Deaths')">
           </div>
           <div class="row justify-content-between">
             <div class="col col-2 p-0">

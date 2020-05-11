@@ -1,8 +1,14 @@
 'use strict';
 
+// when the window loads
+// 1. fetch the data from the API 
+// 2. add event listeners to the table headers 
+// 3. draws chart for cases and deaths with the default state being Alaska
 window.onload = function () {
     this.loadData();
     this.addEListners();
+    this.drawChart('Cases');
+    this.drawChart('Deaths');
 }
 
 function loadData() {
@@ -16,7 +22,7 @@ function americaApi() {
     return fetch("https://covidtracking.com/api/us", requestOptions)
         .then(response => response.json())
         .then(json => json)
-        .catch(renderError)
+        .catch(renderError);
 }
 
 async function getAmerica() {

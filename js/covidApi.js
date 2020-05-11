@@ -11,7 +11,7 @@ function callApi() {
   return fetch("https://covidtracking.com/api/states/daily", requestOptions)
     .then(response => response.json())
     .then(json => json)
-    .catch(renderError)
+    .catch(renderError);
 }
 
 

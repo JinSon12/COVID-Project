@@ -67,8 +67,8 @@ function chooseState(abbrev) {
     document.getElementById('state-affairs').textContent = '' + state + ' Current Affairs';
 
     // redraw the charts after new state is chosen
-    drawLineChart();
-    drawLineChart2();
+    drawChart('Cases');
+    drawChart('Deaths');
 
     // finds state-specific news
     getNews();
