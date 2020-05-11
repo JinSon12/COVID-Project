@@ -113,7 +113,7 @@
             <input type="text" class="form-control" id="search" placeholder=" search for..." role="search"
               oninput="search();">
           </div>
-          <button type="button" id="searchButton" aria-label="Refresh button" onclick="loadData()">
+          <button type="button" id="searchButton" aria-label="Refresh button" onclick="loadData();">
             <i class="fas fa-sync-alt"></i>
             Refresh
           </button>
@@ -123,13 +123,16 @@
         <div class="table-container">
           <table id="tableStates">
             <tr>
-              <th>STATE</th>
-              <th>Total Test Results</th>
-              <th>POSITIVE</th>
-              <th>NEGATIVE</th>
-              <th>DEATHS</th>
-              <th>RECOVERED</th>
+              <th id="state">STATE</th>
+              <th class="data" id="total">Total Test Results <i class="fas fa-sort"></i></th>
+              <th class="data" id="pos">POSITIVE <i class="fas fa-sort"></i></th>
+              <th class="data" id="neg">NEGATIVE<i class="fas fa-sort"></i></th>
+              <th class="data" id="death">DEATHS<i class="fas fa-sort"></i></th>
+              <th class="data" id="rec">RECOVERED<i class="fas fa-sort"></i></th>
+              <th class="data" id="dpratio">DEATHS <br> POSITIVE</th>
             </tr>
+            <tbody id=tbody>
+            </tbody>
           </table>
         </div>
 

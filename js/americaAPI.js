@@ -2,6 +2,7 @@
 
 window.onload = function () {
     this.loadData();
+    this.addEListners();
 }
 
 function loadData() {
@@ -41,7 +42,7 @@ async function getAmerica() {
 }
 
 function numberWithCommas(x) {
-    if (x != null) {
+    if (x !== null && !isNaN(x)) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     } else {
         return 'N/A';
