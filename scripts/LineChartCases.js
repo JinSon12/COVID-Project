@@ -2,6 +2,7 @@ google.charts.load('current', { packages: ['line'] });
 
 function getRange() {
   let value = document.getElementById('chart-slider').value;
+  console.log(value);
   let range = 1679 - value * 55; // 1679 represents 30 days ago from today. There are approx. 55 inserts for each day
   return range;
 }
