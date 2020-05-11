@@ -105,6 +105,18 @@ h3 {
   box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.48);
 }
 
+.table-state {
+  padding-left: 0.2em;
+}
+
+.data{
+  text-align: right;
+  padding-right: .2em;
+}
+
+.select:hover{
+  cursor: pointer;
+}
 .search {
   display: flex;
   align-items: center;
@@ -143,6 +155,7 @@ button:hover .fa-sync-alt{
   transform: rotate(180deg);
  }
 
+ /* Table */
 table {
   font-size: 22px;
 }
@@ -157,7 +170,8 @@ th, td {
   border-bottom: solid 1px #333333;
 }
 
-tr:hover {
+
+#tbody > tr:hover {
   cursor: pointer;
   background-color: #d1e3ff !important;
 }
@@ -166,7 +180,10 @@ table tr:nth-of-type(even) {
   background-color: #F3F3F3;
 }
 
-
+i.fa-sort {
+  color:white;
+  margin-left: 4px;
+}
 
 .state {
   color: royalblue;
@@ -407,15 +424,19 @@ h4 {
 /* FOOTER */
 .footer-container {
   display: flex;
+  flex-direction: column;
   background-color: rgb(243, 243, 243);
-  margin: 180px 0 0 0;
-  height: 25vh;
+  margin: 100px 0 0 0;
+  height: 30vh;
   justify-content: center;
   align-items: center;
 }
 
-.footer-news-api {
+.footer-api {
+  position: absolute;
+  font-size: .5em;
   margin-top: 70px;
+  margin-bottom: 0;
 }
 
 .footer-container.about {

@@ -14,7 +14,7 @@
   },
   "eslintConfig": {
     "parserOptions": {
-      "ecmaVersion": 6
+      "ecmaVersion": 2018
     },
     "env": {
       "browser": true,

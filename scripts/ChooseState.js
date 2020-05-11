@@ -68,7 +68,7 @@ function chooseState(abbrev) {
 
     // redraw the charts after new state is chosen
     drawChart('Cases');
-    drawChart('Deaths')
+    drawChart('Deaths');
 
     // finds state-specific news
     getNews();

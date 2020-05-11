@@ -1,25 +1,28 @@
 'use strict';
 
+// when the window loads
+// 1. fetch the data from the API 
+// 2. add event listeners to the table headers 
+// 3. draws chart for cases and deaths with the default state being Alaska
 window.onload = function () {
     this.loadData();
+    this.addEListners();
+    this.drawChart('Cases');
+    this.drawChart('Deaths');
 }
 
 function loadData() {
     document.getElementById("serverTime").innerHTML = "";
     getAmerica();
     getData();
-
-    // updating the date and checking that the refresh button is working 
-    console.log("fetched data");
-    let d = new Date();
-    setTimeout(function () { document.getElementById("serverTime").innerHTML = d; 900 });
+    updateTime();
 }
 
 function americaApi() {
     return fetch("https://covidtracking.com/api/us", requestOptions)
         .then(response => response.json())
         .then(json => json)
-        .catch(error => console.log('error', error));
+        .catch(renderError);
 }
 
 async function getAmerica() {
@@ -41,7 +44,7 @@ async function getAmerica() {
 }
 
 function numberWithCommas(x) {
-    if (x != null) {
+    if (x !== null && !isNaN(x)) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     } else {
         return 'N/A';
