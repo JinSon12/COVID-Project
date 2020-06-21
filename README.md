@@ -12,4 +12,4 @@ Get the most up-to-date information on Covid-19 Cases in the United States!
 ### Thank you
 Thanks for reading! Please enjoy our website, and reach out if you have any questions, comments or concerns.  
 
-The site can be viewed at <https://info340c-sp20.github.io/jinson12/>
+The site can be viewed at <https://info340a-sp20.github.io/project-1-JinSon12/>
